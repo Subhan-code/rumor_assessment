@@ -1,0 +1,6 @@
+{
+  "name": "Aftertaste × USM",
+  "description": "The collector is away. The apartment is open. Official invitation and RSVP experience for Aftertaste × USM on opening night of Armory Week at 53 Scott Ave.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

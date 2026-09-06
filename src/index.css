@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Romie';
+  src: url('https://therumor.com/_next/static/media/Romie_Regular-s.p.15~rym7-dz4vr.woff?dpl=dpl_E3y9agNBfmtPBUJGxfTvR33up4ww') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Romie';
+  src: url('https://therumor.com/_next/static/media/Romie_Medium-s.p.0l__ajxs2r7be.woff?dpl=dpl_E3y9agNBfmtPBUJGxfTvR33up4ww') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Romie';
+  src: url('https://therumor.com/_next/static/media/Romie_Bold-s.p.09y9nmi83zt3g.woff?dpl=dpl_E3y9agNBfmtPBUJGxfTvR33up4ww') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ABCDiatype';
+  src: url('https://therumor.com/_next/static/media/ABCDiatypeVariable-s.p.0r2cns3shup9l.ttf?dpl=dpl_E3y9agNBfmtPBUJGxfTvR33up4ww') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ABCDiatypeSemiMono';
+  src: url('https://therumor.com/_next/static/media/ABCDiatypeSemiMono_Medium-s.p.0f0tljninf~vb.otf?dpl=dpl_E3y9agNBfmtPBUJGxfTvR33up4ww') format('opentype');
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* The Rumor Design Tokens */
+  --font-dia: 'ABCDiatype', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-romie: 'Romie', serif;
+  --font-dm-mono: 'DM Mono', monospace;
+  --font-diasemimono: 'ABCDiatypeSemiMono', 'DM Mono', monospace;
+
+  --color-foreground: #0F0F0F;
+  --color-subtitle: #737373;
+  --color-near-black: #171717;
+  --color-support-dark-brown: #2D231E;
+  --color-orange: #D33E0B;
+}
+
+body {
+  font-family: var(--font-dia);
+  background-color: #F4F1EC;
+  color: var(--color-foreground);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography Classes matching The Rumor */
+.font-romie {
+  font-family: var(--font-romie);
+}
+
+.font-dia {
+  font-family: var(--font-dia);
+}
+
+.font-mono,
+.font-dm-mono {
+  font-family: var(--font-dm-mono);
+}
+
+.font-diasemimono {
+  font-family: var(--font-diasemimono);
+}
+
+/* Color utility bindings */
+.text-foreground {
+  color: var(--color-foreground);
+}
+
+.text-subtitle {
+  color: var(--color-subtitle);
+}
+
+.text-near-black {
+  color: var(--color-near-black);
+}
+
+.text-shadow-event-title {
+  text-shadow: rgba(255, 255, 255, 0.25) 0px 5.255px 9.46px;
+}
+
+/* The Rumor Signature Info Card System */
+.info-card-bg {
+  background-color: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
+}
+
+.info-card-bg-subtle {
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* The Rumor Ticket Soft Press */
+.ticket-press-soft {
+  transition: transform 0.12s cubic-bezier(0.2, 0, 0, 1), background-color 0.15s ease, filter 0.15s ease;
+}
+
+.ticket-press-soft:active {
+  transform: scale(0.985);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
