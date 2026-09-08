@@ -16,7 +16,7 @@ export const FlyerCard: React.FC<FlyerCardProps> = ({ onExpand }) => {
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') onExpand();
           }}
-          className="group relative cursor-pointer overflow-hidden rounded-[18px] aspect-[4/5] bg-black border border-[#E3DBC7]/15 focus:outline-none focus:ring-2 focus:ring-[#E3DBC7]/50"
+          className="group relative cursor-pointer overflow-hidden rounded-[18px] aspect-square md:aspect-[4/5] bg-black border border-[#E3DBC7]/15 focus:outline-none focus:ring-2 focus:ring-[#E3DBC7]/50"
           title="Click to view full flyer"
         >
           <img
