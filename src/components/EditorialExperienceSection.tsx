@@ -112,43 +112,43 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
   ];
 
   return (
-    <div className="space-y-7 sm:space-y-9 select-none">
+    <div className="space-y-4 sm:space-y-6 md:space-y-8 select-none">
       {/* =========================================================================
-          SECTION CARD 1: PHASE 2 — THE SEARCH (THE APARTMENT ROOMS)
+          SECTION CARD 1: PHASE 2 — THE SEARCH (EXPLORE THE APARTMENT)
           ========================================================================= */}
       <section
         id="phase-search"
-        className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-6 sm:p-8 space-y-6"
+        className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-4 sm:p-7 md:p-8 space-y-4 sm:space-y-6"
       >
         {/* Card Header */}
-        <div className="pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
+        <div className="pb-2.5 sm:pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
           <span className="text-xs font-mono uppercase tracking-widest text-[#E3DBC7]/60 font-semibold">
             Phase 2 — The Search
           </span>
-          <span className="text-xs font-mono text-[#D33E0B] font-semibold">
-            RSVP to See Address
+          <span className="text-[11px] font-mono text-[#E3DBC7]/40">
+            5 Studio Rooms
           </span>
         </div>
 
         {/* Narrative & Statement from Deck */}
-        <div className="space-y-3">
-          <h2 className="font-display text-2xl sm:text-3xl text-[#E3DBC7] font-normal tracking-tight">
+        <div className="space-y-2 sm:space-y-3">
+          <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#E3DBC7] font-normal tracking-tight">
             Explore the Space
           </h2>
-          <p className="text-sm sm:text-base text-[#E3DBC7]/80 leading-relaxed font-normal max-w-2xl">
+          <p className="text-xs sm:text-base text-[#E3DBC7]/80 leading-relaxed font-normal max-w-2xl">
             Guests explore the space to find their number. As they search, they interact and engage with familiar, analog belongings: vinyl records, books, plates, vases, keyboards, and framed art.
           </p>
-          <p className="font-serif italic text-base sm:text-lg text-[#E3DBC7] border-l border-[#D33E0B] pl-4 py-0.5">
+          <p className="font-serif italic text-sm sm:text-base md:text-lg text-[#E3DBC7] border-l border-[#D33E0B] pl-3.5 sm:pl-4 py-0.5">
             Guests begin to see themselves as the collector.
           </p>
         </div>
 
         {/* Architectural Room Directory Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-3 pt-0.5 sm:pt-2">
           {rooms.map((room) => (
             <div
               key={room.name}
-              className="p-4 rounded-xl bg-black/40 border border-[#E3DBC7]/15 space-y-1.5 hover:border-[#E3DBC7]/30 transition-colors"
+              className="p-3 sm:p-4 rounded-xl bg-black/40 border border-[#E3DBC7]/15 space-y-1 hover:border-[#E3DBC7]/30 transition-colors"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono text-[#D33E0B] font-semibold">
@@ -158,10 +158,10 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
                   Room
                 </span>
               </div>
-              <h3 className="text-sm font-semibold text-[#E3DBC7]">
+              <h3 className="text-xs sm:text-sm font-semibold text-[#E3DBC7]">
                 {room.name}
               </h3>
-              <p className="text-xs text-[#E3DBC7]/70 leading-relaxed">
+              <p className="text-[11px] sm:text-xs text-[#E3DBC7]/70 leading-relaxed">
                 {room.desc}
               </p>
             </div>
@@ -174,28 +174,52 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
           ========================================================================= */}
       <section
         id="phase-discovery"
-        className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-6 sm:p-8 space-y-6"
+        className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-4 sm:p-7 md:p-8 space-y-4 sm:space-y-6"
       >
         {/* Card Header */}
-        <div className="pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
+        <div className="pb-2.5 sm:pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
           <span className="text-xs font-mono uppercase tracking-widest text-[#E3DBC7]/60 font-semibold">
             Phase 3 — The Discovery
           </span>
-          <span className="text-xs font-mono text-[#E3DBC7]/50">The USM Cabinet</span>
+          <span className="text-[11px] font-mono text-[#E3DBC7]/50">The USM Cabinet</span>
         </div>
 
         {/* Headline & Narrative */}
-        <div className="space-y-2">
-          <h2 className="font-display text-2xl sm:text-3xl text-[#E3DBC7] font-normal tracking-tight">
+        <div className="space-y-1.5 sm:space-y-2">
+          <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#E3DBC7] font-normal tracking-tight">
             Open Your Cabinet
           </h2>
-          <p className="text-sm sm:text-base text-[#E3DBC7]/80 leading-relaxed font-normal max-w-2xl">
+          <p className="text-xs sm:text-base text-[#E3DBC7]/80 leading-relaxed font-normal max-w-2xl">
             Each guest discovers their assigned number, unlocks their USM Haller steel compartment, and receives five foundational artifacts:
           </p>
         </div>
 
-        {/* Editorial Tabular Catalog */}
-        <div className="border-t border-[#E3DBC7]/15">
+        {/* Mobile View: Clean, non-congested flow */}
+        <div className="sm:hidden divide-y divide-[#E3DBC7]/10 border-t border-b border-[#E3DBC7]/10">
+          {discoveryItems.map((item) => (
+            <div key={item.num} className="py-3 space-y-1">
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="font-mono text-xs font-bold text-[#D33E0B] shrink-0">
+                    {item.num}
+                  </span>
+                  <span className="font-semibold text-xs text-[#E3DBC7] truncate">
+                    {item.title}
+                  </span>
+                </div>
+                <span className="text-[10px] font-mono text-[#E3DBC7]/50 shrink-0">
+                  {item.subtitle}
+                </span>
+              </div>
+              <p className="text-[11px] text-[#E3DBC7]/75 leading-relaxed pl-5">
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop View: Full Editorial Tabular Catalog */}
+        <div className="hidden sm:block border-t border-[#E3DBC7]/15">
           <Table>
             <TableBody>
               {discoveryItems.map((item) => (
@@ -203,23 +227,18 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
                   key={item.num}
                   className="border-b border-[#E3DBC7]/10 hover:bg-transparent transition-none"
                 >
-                  {/* Column 1: Index Number */}
-                  <TableCell className="w-10 sm:w-14 align-top py-4 sm:py-5 pl-0 pr-2 font-mono text-xs sm:text-sm font-bold text-[#D33E0B]">
+                  <TableCell className="w-14 align-top py-5 pl-0 pr-2 font-mono text-sm font-bold text-[#D33E0B]">
                     {item.num}
                   </TableCell>
-
-                  {/* Column 2: Artifact & Curator */}
-                  <TableCell className="w-40 sm:w-52 align-top py-4 sm:py-5 px-2 sm:px-3">
-                    <div className="font-semibold text-sm sm:text-base text-[#E3DBC7] tracking-tight">
+                  <TableCell className="w-52 align-top py-5 px-3">
+                    <div className="font-semibold text-base text-[#E3DBC7] tracking-tight">
                       {item.title}
                     </div>
                     <div className="text-xs font-mono text-[#E3DBC7]/50 mt-0.5">
                       {item.subtitle}
                     </div>
                   </TableCell>
-
-                  {/* Column 3: Narrative / Description */}
-                  <TableCell className="align-top py-4 sm:py-5 pl-2 sm:pl-3 pr-0 text-xs sm:text-sm text-[#E3DBC7]/75 leading-relaxed font-normal">
+                  <TableCell className="align-top py-5 pl-3 pr-0 text-sm text-[#E3DBC7]/75 leading-relaxed font-normal">
                     {item.desc}
                   </TableCell>
                 </TableRow>
@@ -229,12 +248,12 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
         </div>
 
         {/* Deck Bottom Stamp */}
-        <div className="pt-1 flex items-center justify-between text-xs font-mono text-[#E3DBC7]/60">
+        <div className="pt-0.5 flex items-center justify-between text-[11px] sm:text-xs font-mono text-[#E3DBC7]/60">
           <span className="uppercase tracking-widest text-[#E3DBC7] font-semibold">
             Their collection begins now.
           </span>
-          <span className="text-[11px] text-[#E3DBC7]/50">
-            5 Curated Compartment Relics
+          <span className="text-[#E3DBC7]/50">
+            5 Curated Relics
           </span>
         </div>
       </section>
@@ -244,20 +263,20 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
           ========================================================================= */}
       <section
         id="spotlight-artist"
-        className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-6 sm:p-8 space-y-6"
+        className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-4 sm:p-7 md:p-8 space-y-4 sm:space-y-6"
       >
         {/* Card Header */}
-        <div className="pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
+        <div className="pb-2.5 sm:pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
           <span className="text-xs font-mono uppercase tracking-widest text-[#E3DBC7]/60 font-semibold">
             Spotlight Artist
           </span>
-          <span className="text-xs font-mono text-[#E3DBC7]/50">Armory Week Exhibition</span>
+          <span className="text-[11px] font-mono text-[#E3DBC7]/50">Armory Week Exhibition</span>
         </div>
 
         {/* Editorial Split: Portrait & Biography */}
-        <div className="flex flex-col md:flex-row items-start gap-6 sm:gap-8 pt-1">
+        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 md:gap-8 pt-0.5 sm:pt-1">
           {/* Authentic Photograph */}
-          <div className="w-full md:w-56 aspect-square rounded-xl overflow-hidden border border-[#E3DBC7]/20 shrink-0 bg-black shadow-md">
+          <div className="w-28 h-28 sm:w-44 sm:h-44 md:w-56 md:h-56 aspect-square rounded-xl overflow-hidden border border-[#E3DBC7]/20 shrink-0 bg-black shadow-md">
             <img
               src="/dylan-rose-rheingold.png"
               alt="Dylan Rose Rheingold"
@@ -266,22 +285,22 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
           </div>
 
           {/* Artist Monograph & Biography from Deck */}
-          <div className="space-y-3 flex-1">
+          <div className="space-y-2 sm:space-y-3 flex-1 text-left">
             <div>
-              <h2 className="font-display text-2xl sm:text-3xl text-[#E3DBC7] font-normal tracking-tight">
+              <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#E3DBC7] font-normal tracking-tight">
                 Dylan Rose Rheingold
               </h2>
-              <div className="text-xs font-mono text-[#D33E0B] font-semibold uppercase tracking-wider mt-1">
+              <div className="text-[11px] sm:text-xs font-mono text-[#D33E0B] font-semibold uppercase tracking-wider mt-0.5">
                 New York City · Surrealism & Abstract Figuration
               </div>
             </div>
 
-            <p className="text-sm leading-relaxed text-[#E3DBC7]/80 font-normal">
+            <p className="text-xs sm:text-sm leading-relaxed text-[#E3DBC7]/80 font-normal">
               A New York City-based visual artist whose practice blends surrealism with abstract figuration, drawing on themes of identity and cultural hybridity. Working in layered media, she creates luminous, textured dreamscapes that blur the boundaries between reminiscence and the subconscious, where personal histories and collective impressions converge in painterly form.
             </p>
 
-            <div className="pt-2 text-xs font-mono text-[#E3DBC7]/60 border-t border-[#E3DBC7]/10 flex items-center justify-between">
-              <span>Installed across Dining & Listening Rooms</span>
+            <div className="pt-1.5 text-[11px] font-mono text-[#E3DBC7]/60 border-t border-[#E3DBC7]/10 flex items-center justify-between">
+              <span>Dining & Listening Rooms</span>
               <span>Monograph in Cabinet</span>
             </div>
           </div>
@@ -293,28 +312,45 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
           ========================================================================= */}
       <section
         id="run-of-show"
-        className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-6 sm:p-8 space-y-6"
+        className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-4 sm:p-7 md:p-8 space-y-4 sm:space-y-6"
       >
         {/* Card Header */}
-        <div className="pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
+        <div className="pb-2.5 sm:pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
           <span className="text-xs font-mono uppercase tracking-widest text-[#E3DBC7]/60 font-semibold">
             Phase 4 — The Run of Show
           </span>
-          <span className="text-xs font-mono text-[#E3DBC7]/50">Thursday, September 24</span>
+          <span className="text-[11px] font-mono text-[#E3DBC7]/50">Thu, Sep 24</span>
         </div>
 
         {/* Headline */}
         <div className="space-y-1">
-          <h2 className="font-display text-2xl sm:text-3xl text-[#E3DBC7] font-normal tracking-tight">
+          <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#E3DBC7] font-normal tracking-tight">
             Evening Schedule
           </h2>
-          <p className="text-xs sm:text-sm text-[#E3DBC7]/70 font-normal">
+          <p className="text-[11px] sm:text-sm text-[#E3DBC7]/70 font-normal">
             A strictly phone-free sensory progression opening Armory Week at a private studio. Address revealed upon RSVP.
           </p>
         </div>
 
-        {/* Editorial Tabular Schedule */}
-        <div className="border-t border-[#E3DBC7]/15">
+        {/* Mobile View: Clean, non-congested timeline flow */}
+        <div className="sm:hidden divide-y divide-[#E3DBC7]/10 border-t border-b border-[#E3DBC7]/10">
+          {runOfShow.map((slot) => (
+            <div key={slot.isoTime} className="py-3 space-y-1">
+              <div className="flex items-baseline justify-between">
+                <span className="font-mono text-sm font-bold text-[#D33E0B]">{slot.time}</span>
+                <span className="text-[10px] font-mono text-[#E3DBC7]/50">{slot.isoTime} EDT</span>
+              </div>
+              <h3 className="font-semibold text-xs text-[#E3DBC7]">{slot.title}</h3>
+              <div className="text-[10px] font-mono text-[#E3DBC7]/50">{slot.meta}</div>
+              <p className="text-[11px] text-[#E3DBC7]/75 leading-relaxed pt-0.5">
+                {slot.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop View: Editorial Tabular Schedule */}
+        <div className="hidden sm:block border-t border-[#E3DBC7]/15">
           <Table>
             <TableBody>
               {runOfShow.map((slot) => (
@@ -322,28 +358,23 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
                   key={slot.isoTime}
                   className="border-b border-[#E3DBC7]/10 hover:bg-transparent transition-none"
                 >
-                  {/* Column 1: Time */}
-                  <TableCell className="w-24 sm:w-32 align-top py-4 sm:py-5 pl-0 pr-2 font-mono">
-                    <div className="text-base sm:text-lg font-bold text-[#D33E0B] tracking-tight">
+                  <TableCell className="w-32 align-top py-5 pl-0 pr-2 font-mono">
+                    <div className="text-lg font-bold text-[#D33E0B] tracking-tight">
                       {slot.time}
                     </div>
-                    <div className="text-[10px] sm:text-[11px] text-[#E3DBC7]/50 tracking-wider">
+                    <div className="text-[11px] text-[#E3DBC7]/50 tracking-wider">
                       {slot.isoTime} EDT
                     </div>
                   </TableCell>
-
-                  {/* Column 2: Program & Setting */}
-                  <TableCell className="w-44 sm:w-56 align-top py-4 sm:py-5 px-2 sm:px-3">
-                    <div className="font-semibold text-sm sm:text-base text-[#E3DBC7] tracking-tight">
+                  <TableCell className="w-56 align-top py-5 px-3">
+                    <div className="font-semibold text-base text-[#E3DBC7] tracking-tight">
                       {slot.title}
                     </div>
                     <div className="text-xs font-mono text-[#E3DBC7]/50 mt-0.5">
                       {slot.meta}
                     </div>
                   </TableCell>
-
-                  {/* Column 3: Experience Details */}
-                  <TableCell className="align-top py-4 sm:py-5 pl-2 sm:pl-3 pr-0 text-xs sm:text-sm text-[#E3DBC7]/75 leading-relaxed font-normal">
+                  <TableCell className="align-top py-5 pl-3 pr-0 text-sm text-[#E3DBC7]/75 leading-relaxed font-normal">
                     {slot.desc}
                   </TableCell>
                 </TableRow>
@@ -353,8 +384,8 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
         </div>
 
         {/* Run of Show Closing Note */}
-        <div className="pt-1 text-xs font-mono text-[#E3DBC7]/60 text-center sm:text-left">
-          Invitations strictly non-transferable · Seated dinner limited to 30 guests
+        <div className="pt-0.5 text-[11px] sm:text-xs font-mono text-[#E3DBC7]/60 text-center sm:text-left">
+          Invitations non-transferable · Seated dinner limited to 30 guests
         </div>
       </section>
     </div>

@@ -56,10 +56,10 @@ export default function App() {
           transformOrigin: 'top center',
           transform: isShareOpen ? undefined : 'none',
         }}
-        className="relative z-10 mx-auto max-w-[1160px] px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 md:pt-12 pb-28 md:pb-24"
+        className="relative z-10 mx-auto max-w-[1160px] px-3 sm:px-6 md:px-8 pt-4 sm:pt-8 md:pt-12 pb-24 md:pb-24"
       >
         {/* Luma Two-Column Responsive Layout */}
-        <div className="flex flex-col md:flex-row items-start gap-8 lg:gap-12">
+        <div className="flex flex-col md:flex-row items-start gap-5 sm:gap-8 lg:gap-12">
           
           {/* ================= LEFT COLUMN (Sticky Track on Desktop) ================= */}
           <div className="w-full md:w-[320px] lg:w-[340px] shrink-0 space-y-4 md:sticky md:top-8 lg:top-10">
@@ -78,7 +78,7 @@ export default function App() {
           </div>
 
           {/* ================= RIGHT COLUMN (Main Content Stream) ================= */}
-          <div className="flex-1 min-w-0 space-y-6 sm:space-y-7">
+          <div className="flex-1 min-w-0 space-y-4 sm:space-y-6 md:space-y-7">
             {/* 01 — Event Top Meta (Pill, Title, Subtitle, Date & Place side by side on desktop) */}
             <div className="space-y-4">
               <EditorialHeroSection />

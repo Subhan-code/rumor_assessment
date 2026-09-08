@@ -44,7 +44,7 @@ export const PresentedByCard: React.FC<{ onOpenShare?: () => void }> = ({
 
 export const HostedByCard: React.FC = () => {
   return (
-    <div className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-5 select-none space-y-4">
+    <div className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-4 sm:p-5 select-none space-y-3.5 sm:space-y-4">
       {/* Card Header */}
       <div className="pb-2.5 border-b border-[#E3DBC7]/15 flex items-center justify-between">
         <span className="text-xs font-mono uppercase tracking-widest text-[#E3DBC7]/60 font-semibold">

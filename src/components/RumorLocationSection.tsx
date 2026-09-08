@@ -14,10 +14,10 @@ export const RumorLocationSection: React.FC<RumorLocationSectionProps> = ({
   return (
     <section
       id="location"
-      className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-6 sm:p-8 select-none space-y-6"
+      className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-4 sm:p-7 md:p-8 select-none space-y-4 sm:space-y-6"
     >
       {/* Card Title Divider */}
-      <div className="pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
+      <div className="pb-2.5 sm:pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
         <span className="text-xs font-mono uppercase tracking-widest text-[#E3DBC7]/60 font-semibold">
           Location
         </span>
@@ -38,9 +38,9 @@ export const RumorLocationSection: React.FC<RumorLocationSectionProps> = ({
         )}
       </div>
 
-      <div className="pt-1">
-        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-4">
-          <h2 className="font-display text-2xl sm:text-3xl text-[#E3DBC7] font-normal tracking-tight">
+      <div className="pt-0.5">
+        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-3 sm:mb-4">
+          <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#E3DBC7] font-normal tracking-tight">
             {isAddressUnlocked ? '53 Scott Ave, Brooklyn, NY' : 'Private Studio · New York'}
           </h2>
           <span className="text-xs font-mono text-[#E3DBC7]/70">
@@ -58,7 +58,7 @@ export const RumorLocationSection: React.FC<RumorLocationSectionProps> = ({
               : ''
           }`}
         >
-          <div className="relative h-48 sm:h-60 w-full bg-[#000000]">
+          <div className="relative h-40 sm:h-60 w-full bg-[#000000]">
             <img
               alt="Map showing New York"
               className="absolute inset-0 h-full w-full object-cover object-center opacity-80 group-hover:opacity-95 transition-opacity"

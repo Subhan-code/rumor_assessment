@@ -6,9 +6,9 @@ interface FlyerCardProps {
 
 export const FlyerCard: React.FC<FlyerCardProps> = ({ onExpand }) => {
   return (
-    <div className="relative w-full mx-auto md:mx-0 select-none">
+    <div className="relative w-full max-w-[260px] sm:max-w-none mx-auto select-none">
       {/* Mounting Container */}
-      <div className="relative rounded-[24px] border border-[#E3DBC7]/20 bg-[#E3DBC7]/[0.05] p-3 sm:p-3.5 shadow-xl">
+      <div className="relative rounded-[20px] sm:rounded-[24px] border border-[#E3DBC7]/20 bg-[#E3DBC7]/[0.05] p-2.5 sm:p-3.5 shadow-xl">
         <div
           role="button"
           tabIndex={0}
