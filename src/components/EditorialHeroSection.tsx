@@ -15,8 +15,8 @@ export const EditorialHeroSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Event Headline - Enlarged for Mobile, Original Font Style & Desktop Scale */}
-      <h1 className="font-display text-[38px] sm:text-[44px] lg:text-[52px] font-normal text-[#E3DBC7] tracking-tight leading-[1.08] sm:leading-[1.12]">
+      {/* Main Event Headline - Refined Size & Bold */}
+      <h1 className="font-display text-[26px] sm:text-3xl lg:text-[38px] font-bold text-[#E3DBC7] tracking-tight leading-[1.15]">
         The collector is away. <br />
         <span className="text-[#E3DBC7]/90">The apartment is open.</span>
       </h1>
