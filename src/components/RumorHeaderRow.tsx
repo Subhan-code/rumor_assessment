@@ -15,20 +15,20 @@ export const RumorHeaderRow: React.FC<RumorHeaderRowProps> = ({
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-3.5 select-none">
       {/* Date & Time Block */}
-      <div className="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-[#E3DBC7]/[0.04] border border-[#E3DBC7]/15">
-        <div className="w-11 h-11 rounded-xl overflow-hidden border border-[#E3DBC7]/20 flex flex-col items-center justify-center bg-[#000000] shrink-0 text-center">
-          <div className="w-full bg-[#E3DBC7]/15 text-[10px] font-mono uppercase text-[#E3DBC7] font-semibold py-0.5 tracking-wider">
+      <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-[#E3DBC7]/[0.04] border border-[#E3DBC7]/15">
+        <div className="w-12 h-12 rounded-xl overflow-hidden border border-[#E3DBC7]/20 flex flex-col items-center justify-center bg-[#000000] shrink-0 text-center">
+          <div className="w-full bg-[#E3DBC7]/15 text-xs font-mono uppercase text-[#E3DBC7] font-semibold py-0.5 tracking-wider">
             Sep
           </div>
-          <div className="text-base font-bold text-[#E3DBC7] leading-none py-1">
+          <div className="text-lg font-bold text-[#E3DBC7] leading-none py-1">
             24
           </div>
         </div>
         <div className="flex-1 min-w-0">
-          <div className="text-sm sm:text-base font-semibold text-[#E3DBC7] truncate">
+          <div className="text-base font-semibold text-[#E3DBC7] truncate">
             Thursday, September 24
           </div>
-          <div className="text-xs text-[#E3DBC7]/70 truncate mt-0.5 font-mono">
+          <div className="text-xs sm:text-sm text-[#E3DBC7]/75 truncate mt-0.5 font-mono">
             7:00 PM – Late EDT
           </div>
         </div>
@@ -37,13 +37,13 @@ export const RumorHeaderRow: React.FC<RumorHeaderRowProps> = ({
       {/* Place / Location Block */}
       <div
         onClick={!isAddressUnlocked ? onOpenRsvp : undefined}
-        className={`flex items-center gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-[#E3DBC7]/[0.04] border border-[#E3DBC7]/15 transition-all ${
+        className={`flex items-center gap-3.5 p-4 rounded-2xl bg-[#E3DBC7]/[0.04] border border-[#E3DBC7]/15 transition-all ${
           !isAddressUnlocked
             ? 'cursor-pointer hover:bg-[#E3DBC7]/[0.08] hover:border-[#E3DBC7]/30'
             : ''
         }`}
       >
-        <div className="w-11 h-11 rounded-xl overflow-hidden border border-[#E3DBC7]/20 flex items-center justify-center bg-[#000000] shrink-0 text-[#E3DBC7]/80">
+        <div className="w-12 h-12 rounded-xl overflow-hidden border border-[#E3DBC7]/20 flex items-center justify-center bg-[#000000] shrink-0 text-[#E3DBC7]/80">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-5 h-5 text-[#E3DBC7]/80"
@@ -57,7 +57,7 @@ export const RumorHeaderRow: React.FC<RumorHeaderRowProps> = ({
           </svg>
         </div>
         <div className="flex-1 min-w-0">
-          <div className="text-sm sm:text-base font-semibold text-[#E3DBC7] flex items-center gap-1.5 truncate">
+          <div className="text-base font-semibold text-[#E3DBC7] flex items-center gap-1.5 truncate">
             <span className="truncate">
               {isAddressUnlocked ? '53 Scott Ave, Brooklyn, NY' : 'Private Studio · New York'}
             </span>
@@ -74,13 +74,13 @@ export const RumorHeaderRow: React.FC<RumorHeaderRowProps> = ({
               </a>
             )}
           </div>
-          <div className="text-xs text-[#E3DBC7]/70 truncate mt-0.5 font-mono">
+          <div className="text-xs sm:text-sm text-[#E3DBC7]/75 truncate mt-0.5 font-mono">
             {isAddressUnlocked ? 'USM Studio · Concierge Gate 02' : 'RSVP to See Address'}
           </div>
         </div>
 
         {!isAddressUnlocked && (
-          <span className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-[#E3DBC7]/10 border border-[#E3DBC7]/20 text-[#E3DBC7] shrink-0">
+          <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono font-medium bg-[#E3DBC7]/10 border border-[#E3DBC7]/20 text-[#E3DBC7] shrink-0">
             RSVP to Reveal
           </span>
         )}

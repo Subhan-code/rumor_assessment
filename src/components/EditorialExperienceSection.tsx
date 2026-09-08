@@ -121,11 +121,11 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
         className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-4 sm:p-7 md:p-8 space-y-4 sm:space-y-6"
       >
         {/* Card Header */}
-        <div className="pb-2.5 sm:pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#E3DBC7]/60 font-semibold">
+        <div className="pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
+          <span className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#E3DBC7]/70 font-semibold">
             Phase 2 — The Search
           </span>
-          <span className="text-[11px] font-mono text-[#E3DBC7]/40">
+          <span className="text-xs font-mono text-[#E3DBC7]/50">
             5 Studio Rooms
           </span>
         </div>
@@ -135,33 +135,33 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
           <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#E3DBC7] font-normal tracking-tight">
             Explore the Space
           </h2>
-          <p className="text-xs sm:text-base text-[#E3DBC7]/80 leading-relaxed font-normal max-w-2xl">
-            Guests explore the space to find their number. As they search, they interact and engage with familiar, analog belongings: vinyl records, books, plates, vases, keyboards, and framed art.
+          <p className="text-sm sm:text-base text-[#E3DBC7]/85 leading-relaxed font-normal max-w-2xl">
+            Guests explore the loft to find their assigned number. Along the way, they interact with familiar, analog belongings: vinyl records, literature, ceramics, vases, and framed artwork.
           </p>
-          <p className="font-serif italic text-sm sm:text-base md:text-lg text-[#E3DBC7] border-l border-[#D33E0B] pl-3.5 sm:pl-4 py-0.5">
+          <p className="font-serif italic text-sm sm:text-base md:text-lg text-[#E3DBC7] border-l-2 border-[#D33E0B] pl-4 py-0.5">
             Guests begin to see themselves as the collector.
           </p>
         </div>
 
         {/* Architectural Room Directory Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-3 pt-0.5 sm:pt-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-1">
           {rooms.map((room) => (
             <div
               key={room.name}
-              className="p-3 sm:p-4 rounded-xl bg-black/40 border border-[#E3DBC7]/15 space-y-1 hover:border-[#E3DBC7]/30 transition-colors"
+              className="p-3.5 sm:p-4 rounded-xl bg-black/40 border border-[#E3DBC7]/15 space-y-1.5 hover:border-[#E3DBC7]/30 transition-colors"
             >
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono text-[#D33E0B] font-semibold">
+                <span className="text-sm font-mono text-[#D33E0B] font-bold">
                   {room.num}
                 </span>
-                <span className="text-[10px] font-mono text-[#E3DBC7]/40 uppercase tracking-wider">
+                <span className="text-[11px] font-mono text-[#E3DBC7]/50 uppercase tracking-wider">
                   Room
                 </span>
               </div>
-              <h3 className="text-xs sm:text-sm font-semibold text-[#E3DBC7]">
+              <h3 className="text-sm sm:text-base font-semibold text-[#E3DBC7]">
                 {room.name}
               </h3>
-              <p className="text-[11px] sm:text-xs text-[#E3DBC7]/70 leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#E3DBC7]/75 leading-relaxed">
                 {room.desc}
               </p>
             </div>
@@ -174,44 +174,47 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
           ========================================================================= */}
       <section
         id="phase-discovery"
-        className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-4 sm:p-7 md:p-8 space-y-4 sm:space-y-6"
+        className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-5 sm:p-7 md:p-8 space-y-5 sm:space-y-6"
       >
         {/* Card Header */}
-        <div className="pb-2.5 sm:pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#E3DBC7]/60 font-semibold">
+        <div className="pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
+          <span className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#E3DBC7]/70 font-semibold">
             Phase 3 — The Discovery
           </span>
-          <span className="text-[11px] font-mono text-[#E3DBC7]/50">The USM Cabinet</span>
+          <span className="text-xs font-mono text-[#E3DBC7]/50">The USM Cabinet</span>
         </div>
 
         {/* Headline & Narrative */}
-        <div className="space-y-1.5 sm:space-y-2">
+        <div className="space-y-2">
           <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#E3DBC7] font-normal tracking-tight">
             Open Your Cabinet
           </h2>
-          <p className="text-xs sm:text-base text-[#E3DBC7]/80 leading-relaxed font-normal max-w-2xl">
-            Each guest discovers their assigned number, unlocks their USM Haller steel compartment, and receives five foundational artifacts:
+          <p className="text-sm sm:text-base text-[#E3DBC7]/85 leading-relaxed font-normal max-w-2xl">
+            Each guest locates their number, unlocks their USM Haller compartment, and receives five foundational relics:
           </p>
         </div>
 
-        {/* Mobile View: Clean, non-congested flow */}
-        <div className="sm:hidden divide-y divide-[#E3DBC7]/10 border-t border-b border-[#E3DBC7]/10">
+        {/* Mobile View: High-contrast styled list */}
+        <div className="sm:hidden space-y-2.5">
           {discoveryItems.map((item) => (
-            <div key={item.num} className="py-3 space-y-1">
+            <div
+              key={item.num}
+              className="p-3.5 rounded-xl bg-black/40 border border-[#E3DBC7]/15 space-y-1.5"
+            >
               <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2 min-w-0">
-                  <span className="font-mono text-xs font-bold text-[#D33E0B] shrink-0">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <span className="font-mono text-sm font-bold text-[#D33E0B] shrink-0">
                     {item.num}
                   </span>
-                  <span className="font-semibold text-xs text-[#E3DBC7] truncate">
+                  <span className="font-semibold text-sm text-[#E3DBC7] truncate">
                     {item.title}
                   </span>
                 </div>
-                <span className="text-[10px] font-mono text-[#E3DBC7]/50 shrink-0">
+                <span className="text-xs font-mono px-2 py-0.5 rounded bg-[#E3DBC7]/[0.08] text-[#E3DBC7]/70 shrink-0">
                   {item.subtitle}
                 </span>
               </div>
-              <p className="text-[11px] text-[#E3DBC7]/75 leading-relaxed pl-5">
+              <p className="text-xs sm:text-sm text-[#E3DBC7]/80 leading-relaxed pl-6">
                 {item.desc}
               </p>
             </div>
@@ -248,7 +251,7 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
         </div>
 
         {/* Deck Bottom Stamp */}
-        <div className="pt-0.5 flex items-center justify-between text-[11px] sm:text-xs font-mono text-[#E3DBC7]/60">
+        <div className="pt-1 flex items-center justify-between text-xs font-mono text-[#E3DBC7]/70 border-t border-[#E3DBC7]/10">
           <span className="uppercase tracking-widest text-[#E3DBC7] font-semibold">
             Their collection begins now.
           </span>
@@ -263,20 +266,20 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
           ========================================================================= */}
       <section
         id="spotlight-artist"
-        className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-4 sm:p-7 md:p-8 space-y-4 sm:space-y-6"
+        className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-5 sm:p-7 md:p-8 space-y-5 sm:space-y-6"
       >
         {/* Card Header */}
-        <div className="pb-2.5 sm:pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#E3DBC7]/60 font-semibold">
+        <div className="pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
+          <span className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#E3DBC7]/70 font-semibold">
             Spotlight Artist
           </span>
-          <span className="text-[11px] font-mono text-[#E3DBC7]/50">Armory Week Exhibition</span>
+          <span className="text-xs font-mono text-[#E3DBC7]/50">Armory Week Exhibition</span>
         </div>
 
         {/* Editorial Split: Portrait & Biography */}
-        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 md:gap-8 pt-0.5 sm:pt-1">
+        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 md:gap-8 pt-1">
           {/* Authentic Photograph */}
-          <div className="w-28 h-28 sm:w-44 sm:h-44 md:w-56 md:h-56 aspect-square rounded-xl overflow-hidden border border-[#E3DBC7]/20 shrink-0 bg-black shadow-md">
+          <div className="w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 aspect-square rounded-xl overflow-hidden border border-[#E3DBC7]/20 shrink-0 bg-black shadow-md">
             <img
               src="/dylan-rose-rheingold.png"
               alt="Dylan Rose Rheingold"
@@ -285,23 +288,28 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
           </div>
 
           {/* Artist Monograph & Biography from Deck */}
-          <div className="space-y-2 sm:space-y-3 flex-1 text-left">
+          <div className="space-y-2.5 sm:space-y-3 flex-1 text-left">
             <div>
-              <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#E3DBC7] font-normal tracking-tight">
+              <h2 className="font-display text-2xl sm:text-3xl text-[#E3DBC7] font-normal tracking-tight">
                 Dylan Rose Rheingold
               </h2>
-              <div className="text-[11px] sm:text-xs font-mono text-[#D33E0B] font-semibold uppercase tracking-wider mt-0.5">
-                New York City · Surrealism & Abstract Figuration
+              <div className="text-xs sm:text-sm font-mono text-[#D33E0B] font-semibold uppercase tracking-wider mt-1">
+                New York City · Surrealism &amp; Abstract Figuration
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm leading-relaxed text-[#E3DBC7]/80 font-normal">
-              A New York City-based visual artist whose practice blends surrealism with abstract figuration, drawing on themes of identity and cultural hybridity. Working in layered media, she creates luminous, textured dreamscapes that blur the boundaries between reminiscence and the subconscious, where personal histories and collective impressions converge in painterly form.
+            <p className="text-sm sm:text-base leading-relaxed text-[#E3DBC7]/85 font-normal">
+              A New York City-based visual artist whose practice blends surrealism with abstract figuration, drawing on themes of identity and cultural hybridity in textured, layered dreamscapes.
             </p>
 
-            <div className="pt-1.5 text-[11px] font-mono text-[#E3DBC7]/60 border-t border-[#E3DBC7]/10 flex items-center justify-between">
-              <span>Dining & Listening Rooms</span>
-              <span>Monograph in Cabinet</span>
+            {/* Thematic Tags on Mobile & Tablet */}
+            <div className="flex flex-wrap gap-1.5 pt-1">
+              <span className="px-2.5 py-1 rounded-full bg-[#E3DBC7]/[0.08] text-xs font-mono text-[#E3DBC7]/80">
+                Dining &amp; Listening Rooms
+              </span>
+              <span className="px-2.5 py-1 rounded-full bg-[#E3DBC7]/[0.08] text-xs font-mono text-[#E3DBC7]/80">
+                Monograph in Cabinet
+              </span>
             </div>
           </div>
         </div>
@@ -312,37 +320,42 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
           ========================================================================= */}
       <section
         id="run-of-show"
-        className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-4 sm:p-7 md:p-8 space-y-4 sm:space-y-6"
+        className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-5 sm:p-7 md:p-8 space-y-5 sm:space-y-6"
       >
         {/* Card Header */}
-        <div className="pb-2.5 sm:pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#E3DBC7]/60 font-semibold">
+        <div className="pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
+          <span className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#E3DBC7]/70 font-semibold">
             Phase 4 — The Run of Show
           </span>
-          <span className="text-[11px] font-mono text-[#E3DBC7]/50">Thu, Sep 24</span>
+          <span className="text-xs font-mono text-[#E3DBC7]/50">Thu, Sep 24</span>
         </div>
 
         {/* Headline */}
-        <div className="space-y-1">
+        <div className="space-y-1.5">
           <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#E3DBC7] font-normal tracking-tight">
             Evening Schedule
           </h2>
-          <p className="text-[11px] sm:text-sm text-[#E3DBC7]/70 font-normal">
-            A strictly phone-free sensory progression opening Armory Week at a private studio. Address revealed upon RSVP.
+          <p className="text-xs sm:text-sm text-[#E3DBC7]/80 font-normal">
+            A strictly phone-free sensory progression opening Armory Week. Confidential studio address revealed upon RSVP.
           </p>
         </div>
 
-        {/* Mobile View: Clean, non-congested timeline flow */}
-        <div className="sm:hidden divide-y divide-[#E3DBC7]/10 border-t border-b border-[#E3DBC7]/10">
+        {/* Mobile View: Clean, styled timeline cards */}
+        <div className="sm:hidden space-y-3">
           {runOfShow.map((slot) => (
-            <div key={slot.isoTime} className="py-3 space-y-1">
+            <div
+              key={slot.isoTime}
+              className="p-4 rounded-xl bg-black/40 border border-[#E3DBC7]/15 space-y-2"
+            >
               <div className="flex items-baseline justify-between">
-                <span className="font-mono text-sm font-bold text-[#D33E0B]">{slot.time}</span>
-                <span className="text-[10px] font-mono text-[#E3DBC7]/50">{slot.isoTime} EDT</span>
+                <span className="font-mono text-base font-bold text-[#D33E0B]">{slot.time}</span>
+                <span className="text-xs font-mono text-[#E3DBC7]/50">{slot.isoTime} EDT</span>
               </div>
-              <h3 className="font-semibold text-xs text-[#E3DBC7]">{slot.title}</h3>
-              <div className="text-[10px] font-mono text-[#E3DBC7]/50">{slot.meta}</div>
-              <p className="text-[11px] text-[#E3DBC7]/75 leading-relaxed pt-0.5">
+              <h3 className="font-semibold text-sm sm:text-base text-[#E3DBC7]">{slot.title}</h3>
+              <div className="inline-block text-xs font-mono text-[#D33E0B] font-medium bg-[#D33E0B]/10 px-2 py-0.5 rounded">
+                {slot.meta}
+              </div>
+              <p className="text-xs sm:text-sm text-[#E3DBC7]/85 leading-relaxed pt-0.5">
                 {slot.desc}
               </p>
             </div>
