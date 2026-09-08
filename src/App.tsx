@@ -13,7 +13,7 @@ import { ContactOrganizerModal } from './components/ContactOrganizerModal';
 import { EditorialHeroSection } from './components/EditorialHeroSection';
 import { EditorialExperienceSection } from './components/EditorialExperienceSection';
 import { RumorLocationSection } from './components/RumorLocationSection';
-import { PresentedByCard, HostedByCard, HostActionLinks } from './components/RumorHostsSection';
+import { PresentedByCard, HostedByCard, HostActionLinks, ShareEventCard } from './components/RumorHostsSection';
 import { initGlobalHaptics } from './lib/haptics';
 import { CabinetDiscoveryItem } from './types';
 
@@ -66,21 +66,21 @@ export default function App() {
             {/* 01 — Cover Artwork */}
             <FlyerCard onExpand={() => setIsFlyerModalOpen(true)} />
 
-            {/* Desktop Only Cards: Presented by, Hosted by, Actions */}
-            <div className="hidden md:flex flex-col space-y-4 pt-1">
-              <PresentedByCard onOpenShare={() => setIsShareOpen(true)} />
+            {/* Desktop Only Cards: Presented by, Hosted by, Share Event, Actions */}
+            <div className="hidden md:flex flex-col space-y-3.5 pt-1">
+              <PresentedByCard />
               <HostedByCard />
+              <ShareEventCard onOpenShare={() => setIsShareOpen(true)} />
               <HostActionLinks
                 onContactOrganizer={() => setIsContactOpen(true)}
-                onOpenShare={() => setIsShareOpen(true)}
               />
             </div>
           </div>
 
           {/* ================= RIGHT COLUMN (Main Content Stream) ================= */}
-          <div className="flex-1 min-w-0 space-y-4 sm:space-y-6 md:space-y-7">
-            {/* 01 — Event Top Meta (Pill, Title, Subtitle, Date & Place side by side on desktop) */}
-            <div className="space-y-4">
+          <div className="flex-1 min-w-0 space-y-7 sm:space-y-9 md:space-y-11">
+            {/* 01 — Event Top Meta (Primary Tier) */}
+            <div className="space-y-4 sm:space-y-5">
               <EditorialHeroSection />
 
               {/* Date & Location Rows (Side by Side on Desktop) */}
@@ -90,31 +90,37 @@ export default function App() {
               />
             </div>
 
-            {/* 02 — Phase 1: The Invitation */}
-            <div id="editorial-about">
+            {/* 02 — Phase 1: The Invitation (Narrative Tier) */}
+            <div id="editorial-about" className="pt-1 sm:pt-2">
               <RumorAboutSection />
             </div>
 
-            {/* 03 — Phases 2-4: The Search, The Discovery, Artist, Run of Show */}
-            <EditorialExperienceSection onSelectItem={setSelectedCabinetItem} />
+            {/* 03 — Phases 2-4: The Search, The Discovery, Artist, Run of Show (Experience Tier) */}
+            <div>
+              <EditorialExperienceSection onSelectItem={setSelectedCabinetItem} />
+            </div>
 
-            {/* 04 — Location & Map Content Card */}
-            <RumorLocationSection
-              isAddressUnlocked={isAddressUnlocked}
-              onOpenRsvp={handleOpenRsvp}
-            />
+            {/* 04 — Location & Map Content Card (Venue Tier) */}
+            <div>
+              <RumorLocationSection
+                isAddressUnlocked={isAddressUnlocked}
+                onOpenRsvp={handleOpenRsvp}
+              />
+            </div>
 
-            {/* Mobile Only: Hosted By & Actions (shown at bottom of stream on small screens) */}
-            <div className="md:hidden space-y-4 pt-2">
+            {/* Mobile Only: Share Event Card, Hosted By & Actions (Community Tier) */}
+            <div className="md:hidden space-y-4 pt-2 sm:pt-4">
+              <ShareEventCard onOpenShare={() => setIsShareOpen(true)} />
               <HostedByCard />
               <HostActionLinks
                 onContactOrganizer={() => setIsContactOpen(true)}
-                onOpenShare={() => setIsShareOpen(true)}
               />
             </div>
 
             {/* 07 — Powered by Rumor & Created by Syed Subhan */}
-            <RumorFooterStamp />
+            <div className="pt-2">
+              <RumorFooterStamp />
+            </div>
           </div>
 
         </div>

@@ -108,6 +108,48 @@ export const HostedByCard: React.FC = () => {
   );
 };
 
+export const ShareEventCard: React.FC<{ onOpenShare?: () => void }> = ({
+  onOpenShare,
+}) => {
+  return (
+    <div
+      onClick={onOpenShare}
+      className="group rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] hover:bg-[#E3DBC7]/[0.05] hover:border-[#E3DBC7]/30 p-4 sm:p-4.5 select-none transition-all duration-200 cursor-pointer flex items-center justify-between gap-3.5"
+    >
+      <div className="flex items-center gap-3.5 min-w-0">
+        <div className="w-10 h-10 rounded-xl border border-[#E3DBC7]/20 flex items-center justify-center bg-black shrink-0 text-[#E3DBC7] group-hover:border-[#E3DBC7]/40 transition-colors">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-4 h-4 text-[#E3DBC7]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="1.75"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+            />
+          </svg>
+        </div>
+        <div className="min-w-0">
+          <div className="text-xs font-mono uppercase tracking-wider text-[#E3DBC7]/60 font-semibold">
+            Invite Guests
+          </div>
+          <div className="text-sm sm:text-base font-semibold text-[#E3DBC7] truncate mt-0.5 group-hover:text-white transition-colors">
+            Share Event
+          </div>
+        </div>
+      </div>
+      <div className="px-3 py-1.5 rounded-full text-xs font-mono font-medium border border-[#E3DBC7]/25 text-[#E3DBC7] group-hover:bg-[#E3DBC7]/10 group-hover:border-[#E3DBC7]/50 transition-all shrink-0 flex items-center gap-1.5">
+        <span>Share</span>
+        <span>↗</span>
+      </div>
+    </div>
+  );
+};
+
 export const HostActionLinks: React.FC<RumorHostsSectionProps> = ({
   onContactOrganizer,
   onOpenShare,
@@ -118,7 +160,7 @@ export const HostActionLinks: React.FC<RumorHostsSectionProps> = ({
         <button
           type="button"
           onClick={onContactOrganizer}
-          className="text-left text-xs sm:text-sm font-mono text-[#E3DBC7]/80 hover:text-[#E3DBC7] py-1.5 transition-colors cursor-pointer flex items-center justify-between"
+          className="text-left text-xs sm:text-sm font-mono text-[#E3DBC7]/70 hover:text-[#E3DBC7] py-1.5 transition-colors cursor-pointer flex items-center justify-between"
         >
           <span>Contact the Host</span>
           <span>›</span>
@@ -128,7 +170,7 @@ export const HostActionLinks: React.FC<RumorHostsSectionProps> = ({
         <button
           type="button"
           onClick={onOpenShare}
-          className="text-left text-xs sm:text-sm font-mono text-[#E3DBC7]/80 hover:text-[#E3DBC7] py-1.5 transition-colors cursor-pointer flex items-center justify-between"
+          className="text-left text-xs sm:text-sm font-mono text-[#E3DBC7]/70 hover:text-[#E3DBC7] py-1.5 transition-colors cursor-pointer flex items-center justify-between"
         >
           <span>Share Event</span>
           <span>›</span>
@@ -146,10 +188,8 @@ export const RumorHostsSection: React.FC<RumorHostsSectionProps> = ({
     <div className="space-y-4">
       <PresentedByCard onOpenShare={onOpenShare} />
       <HostedByCard />
-      <HostActionLinks
-        onContactOrganizer={onContactOrganizer}
-        onOpenShare={onOpenShare}
-      />
+      <ShareEventCard onOpenShare={onOpenShare} />
+      <HostActionLinks onContactOrganizer={onContactOrganizer} />
     </div>
   );
 };
