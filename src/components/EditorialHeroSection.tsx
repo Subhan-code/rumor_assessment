@@ -13,10 +13,10 @@ export const EditorialHeroSection: React.FC<EditorialHeroSectionProps> = ({
     <div className="select-none space-y-3 sm:space-y-4">
       {/* Category & Phone-Free Highlight Badges (No dots, Armory Week 2026) */}
       <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-        <div className="inline-flex items-center px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-md sm:rounded-full bg-[#E3DBC7]/[0.06] border border-[#E3DBC7]/15 text-xs font-mono text-[#E3DBC7]/80">
+        <div className="inline-flex items-center px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-[#E3DBC7]/[0.06] border border-[#E3DBC7]/15 text-xs font-mono text-[#E3DBC7]/80">
           Armory Week 2026
         </div>
-        <div className="inline-flex items-center px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-md sm:rounded-full bg-[#D33E0B]/15 border border-[#D33E0B]/30 text-xs font-mono text-[#E3DBC7] font-semibold tracking-wide">
+        <div className="inline-flex items-center px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-[#D33E0B]/15 border border-[#D33E0B]/30 text-xs font-mono text-[#E3DBC7] font-semibold tracking-wide">
           Phone-Free Experience
         </div>
       </div>
@@ -47,7 +47,7 @@ export const EditorialHeroSection: React.FC<EditorialHeroSectionProps> = ({
           <button
             type="button"
             onClick={onOpenShare}
-            className="px-3 py-1 rounded-md sm:rounded-full text-xs font-mono font-medium bg-[#E3DBC7]/[0.08] hover:bg-[#E3DBC7]/[0.16] border border-[#E3DBC7]/20 text-[#E3DBC7] transition-all cursor-pointer shrink-0"
+            className="px-3 py-1 rounded-sm text-xs font-mono font-medium bg-[#E3DBC7]/[0.08] hover:bg-[#E3DBC7]/[0.16] border border-[#E3DBC7]/20 text-[#E3DBC7] transition-all cursor-pointer shrink-0"
             title="Share Event"
           >
             Share
