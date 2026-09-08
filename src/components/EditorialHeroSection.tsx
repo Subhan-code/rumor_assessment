@@ -21,8 +21,11 @@ export const EditorialHeroSection: React.FC = () => {
         <span className="text-[#E3DBC7]/90">The apartment is open.</span>
       </h1>
 
-      {/* Deck Statement - Original Earlier Copy & Style */}
-      <p className="text-sm sm:text-base text-[#E3DBC7]/80 leading-relaxed max-w-2xl font-normal">
+      {/* Deck Statement - Smart & Concise on Mobile, Full on Desktop */}
+      <p className="md:hidden text-sm sm:text-base text-[#E3DBC7]/85 leading-relaxed font-normal">
+        A phone-free sensory experience in USM&apos;s private studio considering the future of collecting. Devices checked at entry.
+      </p>
+      <p className="hidden md:block text-sm sm:text-base text-[#E3DBC7]/80 leading-relaxed max-w-2xl font-normal">
         On Thursday, September 24th, Aftertaste &amp; USM host a strictly phone-free sensory experience with select brands. For the first time, USM invites New York’s creative class to converge in its private studio to consider the future of collecting. Devices are safely checked at arrival for unbroken presence.
       </p>
 

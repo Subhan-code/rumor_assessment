@@ -50,6 +50,7 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
       title: 'The Menu',
       subtitle: 'Happenings NY',
       desc: 'Food design and choreographed sensory dinner curated by Happenings NY.',
+      shortDesc: 'Five-act sensory culinary dinner by Happenings NY.',
       itemId: 'menu-card',
       tag: 'Culinary',
     },
@@ -58,6 +59,7 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
       title: 'Artist Catalog',
       subtitle: 'Dylan Rose Rheingold',
       desc: 'Exhibition monograph documenting the exhibited painterly dreamscapes.',
+      shortDesc: 'Exhibition monograph by Dylan Rose Rheingold.',
       itemId: 'artist-monograph',
       tag: 'Fine Art',
     },
@@ -66,6 +68,7 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
       title: 'Seating Assignment',
       subtitle: '30 VIP Guests',
       desc: 'Curated table placement designed for connection among New York’s creative class.',
+      shortDesc: 'Curated table placement for 30 VIP guests.',
       itemId: 'seating-token',
       tag: 'The Table',
     },
@@ -74,6 +77,7 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
       title: 'USM Raffle Ticket',
       subtitle: 'Swiss Modular Design',
       desc: 'Opportunity to win your own bespoke USM Haller modular piece.',
+      shortDesc: 'Entry to win a bespoke USM Haller modular piece.',
       itemId: 'usm-raffle',
       tag: 'Icon',
     },
@@ -82,6 +86,7 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
       title: 'The Collectible',
       subtitle: 'Brand Memento',
       desc: 'A physical heirloom memento from our partner brand to begin your collection.',
+      shortDesc: 'Physical heirloom memento to begin your collection.',
       itemId: 'brass-token',
       tag: 'Archive',
     },
@@ -93,6 +98,7 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
       isoTime: '19:00',
       title: 'Discovery Begins',
       desc: 'Concierge arrival, brass key assignment, phone lock-up, aperitivo, and apartment search.',
+      shortDesc: 'Concierge arrival, key assignment, and studio search.',
       meta: 'Arrival & Reception',
     },
     {
@@ -100,6 +106,7 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
       isoTime: '20:30',
       title: 'Seated VIP Dinner',
       desc: '30 curated dinner guests. Five-act sensory culinary experience designed by Happenings NY.',
+      shortDesc: 'Five-act sensory culinary dinner by Happenings NY.',
       meta: '30 Guests (Curated for Connection)',
     },
     {
@@ -107,6 +114,7 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
       isoTime: '22:00',
       title: 'Afters — The Apartment',
       desc: 'The collector’s apartment opens to 70+ additional salon guests. Analog vinyl listening session, digestifs, and USM raffle draw.',
+      shortDesc: 'Loft opens to 70+ guests. Vinyl session & USM raffle.',
       meta: '70+ Salon Guests',
     },
   ];
@@ -135,7 +143,10 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
           <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#E3DBC7] font-normal tracking-tight">
             Explore the Space
           </h2>
-          <p className="text-sm sm:text-base text-[#E3DBC7]/85 leading-relaxed font-normal max-w-2xl">
+          <p className="md:hidden text-sm text-[#E3DBC7]/85 leading-relaxed font-normal">
+            Explore 5 studio rooms to find your assigned number among analog relics and art.
+          </p>
+          <p className="hidden md:block text-sm sm:text-base text-[#E3DBC7]/85 leading-relaxed font-normal max-w-2xl">
             Guests explore the loft to find their assigned number. Along the way, they interact with familiar, analog belongings: vinyl records, literature, ceramics, vases, and framed artwork.
           </p>
           <p className="font-serif italic text-sm sm:text-base md:text-lg text-[#E3DBC7] border-l-2 border-[#D33E0B] pl-4 py-0.5">
@@ -189,7 +200,10 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
           <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#E3DBC7] font-normal tracking-tight">
             Open Your Cabinet
           </h2>
-          <p className="text-sm sm:text-base text-[#E3DBC7]/85 leading-relaxed font-normal max-w-2xl">
+          <p className="md:hidden text-sm text-[#E3DBC7]/85 leading-relaxed font-normal">
+            Unlock your assigned USM compartment to reveal five curated relics:
+          </p>
+          <p className="hidden md:block text-sm sm:text-base text-[#E3DBC7]/85 leading-relaxed font-normal max-w-2xl">
             Each guest locates their number, unlocks their USM Haller compartment, and receives five foundational relics:
           </p>
         </div>
@@ -215,7 +229,7 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
                 </span>
               </div>
               <p className="text-xs sm:text-sm text-[#E3DBC7]/80 leading-relaxed pl-6">
-                {item.desc}
+                {item.shortDesc || item.desc}
               </p>
             </div>
           ))}
@@ -356,7 +370,7 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
                 {slot.meta}
               </div>
               <p className="text-xs sm:text-sm text-[#E3DBC7]/85 leading-relaxed pt-0.5">
-                {slot.desc}
+                {slot.shortDesc || slot.desc}
               </p>
             </div>
           ))}
