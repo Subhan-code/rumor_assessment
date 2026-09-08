@@ -39,11 +39,11 @@ export const RumorLocationSection: React.FC<RumorLocationSectionProps> = ({
       </div>
 
       <div className="pt-0.5">
-        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-3 sm:mb-4">
-          <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#E3DBC7] font-normal tracking-tight">
+        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2.5 sm:mb-3">
+          <h2 className="font-display text-lg sm:text-xl md:text-2xl text-[#E3DBC7] font-bold tracking-tight">
             {isAddressUnlocked ? '53 Scott Ave, Brooklyn, NY' : 'Private Studio, New York'}
           </h2>
-          <span className="text-xs sm:text-sm font-mono text-[#E3DBC7]/75">
+          <span className="text-xs font-mono text-[#E3DBC7]/70">
             {isAddressUnlocked
               ? 'USM Studio (Concierge Gate 02)'
               : 'RSVP to see event address'}

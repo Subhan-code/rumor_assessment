@@ -277,14 +277,14 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
               />
             </div>
             <div className="min-w-0 flex-1">
-              <h3 className="font-display text-lg font-normal text-[#E3DBC7] leading-tight">
+              <h3 className="font-display text-base sm:text-lg font-bold text-[#E3DBC7] leading-tight">
                 Dylan Rose Rheingold
               </h3>
               <div className="text-[11px] font-mono text-[#D33E0B] font-semibold mt-0.5">
                 Surrealism / Abstract Figuration
               </div>
               <p className="text-xs text-[#E3DBC7]/75 leading-tight pt-1">
-                Monograph in USM cabinet · Works in Dining &amp; Listening Rooms
+                Monograph in USM cabinet, works in Dining &amp; Listening Rooms
               </p>
             </div>
           </div>
@@ -313,17 +313,17 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
           </div>
 
         {/* Narrative & Statement from Deck */}
-        <div className="space-y-2 sm:space-y-3">
-          <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#E3DBC7] font-normal tracking-tight">
+        <div className="space-y-2 sm:space-y-2.5">
+          <h2 className="font-display text-lg sm:text-xl md:text-2xl text-[#E3DBC7] font-bold tracking-tight">
             Explore the Space
           </h2>
-          <p className="md:hidden text-sm text-[#E3DBC7]/85 leading-relaxed font-normal">
+          <p className="md:hidden text-xs sm:text-sm text-[#E3DBC7]/75 leading-relaxed font-normal">
             Explore 5 studio rooms to find your assigned number among analog relics and art.
           </p>
-          <p className="hidden md:block text-sm sm:text-base text-[#E3DBC7]/85 leading-relaxed font-normal max-w-2xl">
+          <p className="hidden md:block text-xs sm:text-sm text-[#E3DBC7]/75 leading-relaxed font-normal max-w-2xl">
             Guests explore the loft to find their assigned number. Along the way, they interact with familiar, analog belongings: vinyl records, literature, ceramics, vases, and framed artwork.
           </p>
-          <p className="font-serif italic text-sm sm:text-base md:text-lg text-[#E3DBC7] border-l-2 border-[#D33E0B] pl-4 py-0.5">
+          <p className="font-serif italic text-xs sm:text-sm md:text-base text-[#E3DBC7]/90 border-l-2 border-[#D33E0B] pl-3 py-0.5">
             Guests begin to see themselves as the collector.
           </p>
         </div>
@@ -370,14 +370,14 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
         </div>
 
         {/* Headline & Narrative */}
-        <div className="space-y-2">
-          <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#E3DBC7] font-normal tracking-tight">
+        <div className="space-y-1.5 sm:space-y-2">
+          <h2 className="font-display text-lg sm:text-xl md:text-2xl text-[#E3DBC7] font-bold tracking-tight">
             Open Your Cabinet
           </h2>
-          <p className="md:hidden text-sm text-[#E3DBC7]/85 leading-relaxed font-normal">
+          <p className="md:hidden text-xs sm:text-sm text-[#E3DBC7]/75 leading-relaxed font-normal">
             Unlock your assigned USM compartment to reveal five curated relics:
           </p>
-          <p className="hidden md:block text-sm sm:text-base text-[#E3DBC7]/85 leading-relaxed font-normal max-w-2xl">
+          <p className="hidden md:block text-xs sm:text-sm text-[#E3DBC7]/75 leading-relaxed font-normal max-w-2xl">
             Each guest locates their number, unlocks their USM Haller compartment, and receives five foundational relics:
           </p>
         </div>
@@ -478,15 +478,15 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
           {/* Artist Monograph & Biography from Deck */}
           <div className="space-y-2.5 sm:space-y-3 flex-1 text-left">
             <div>
-              <h2 className="font-display text-2xl sm:text-3xl text-[#E3DBC7] font-normal tracking-tight">
+              <h2 className="font-display text-lg sm:text-xl md:text-2xl text-[#E3DBC7] font-bold tracking-tight">
                 Dylan Rose Rheingold
               </h2>
-              <div className="text-xs sm:text-sm font-mono text-[#D33E0B] font-semibold uppercase tracking-wider mt-1">
+              <div className="text-[11px] sm:text-xs font-mono text-[#D33E0B] font-semibold uppercase tracking-wider mt-0.5">
                 New York City / Surrealism &amp; Abstract Figuration
               </div>
             </div>
 
-            <p className="text-sm sm:text-base leading-relaxed text-[#E3DBC7]/85 font-normal">
+            <p className="text-xs sm:text-sm leading-relaxed text-[#E3DBC7]/75 font-normal">
               A New York City-based visual artist whose practice blends surrealism with abstract figuration, drawing on themes of identity and cultural hybridity in textured, layered dreamscapes.
             </p>
 
@@ -520,10 +520,10 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
 
         {/* Headline */}
         <div className="space-y-1.5">
-          <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#E3DBC7] font-normal tracking-tight">
+          <h2 className="font-display text-lg sm:text-xl md:text-2xl text-[#E3DBC7] font-bold tracking-tight">
             Evening Schedule
           </h2>
-          <p className="text-xs sm:text-sm text-[#E3DBC7]/80 font-normal">
+          <p className="text-xs sm:text-sm text-[#E3DBC7]/75 font-normal">
             A strictly phone-free sensory progression opening Armory Week. Confidential studio address revealed upon RSVP.
           </p>
         </div>
@@ -586,7 +586,7 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
 
         {/* Run of Show Closing Note */}
         <div className="pt-0.5 text-[11px] sm:text-xs font-mono text-[#E3DBC7]/60 text-center sm:text-left">
-          Invitations non-transferable · Seated dinner limited to 30 guests
+          Invitations non-transferable, seated dinner limited to 30 guests
         </div>
       </section>
       </div>

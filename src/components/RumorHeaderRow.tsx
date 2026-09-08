@@ -25,10 +25,10 @@ export const RumorHeaderRow: React.FC<RumorHeaderRowProps> = ({
           </div>
         </div>
         <div className="flex-1 min-w-0">
-          <div className="text-base font-semibold text-[#E3DBC7] truncate">
+          <div className="text-sm sm:text-base font-semibold text-[#E3DBC7] truncate">
             Thursday, September 24
           </div>
-          <div className="text-xs sm:text-sm text-[#E3DBC7]/75 truncate mt-0.5 font-mono">
+          <div className="text-xs text-[#E3DBC7]/70 truncate mt-0.5 font-mono">
             7:00 PM – Late EDT
           </div>
         </div>
@@ -57,7 +57,7 @@ export const RumorHeaderRow: React.FC<RumorHeaderRowProps> = ({
           </svg>
         </div>
         <div className="flex-1 min-w-0">
-          <div className="text-base font-semibold text-[#E3DBC7] flex items-center gap-1.5 truncate">
+          <div className="text-sm sm:text-base font-semibold text-[#E3DBC7] flex items-center gap-1.5 truncate">
             <span className="truncate">
               {isAddressUnlocked ? '53 Scott Ave, Brooklyn, NY' : 'Private Studio, New York'}
             </span>
@@ -74,13 +74,13 @@ export const RumorHeaderRow: React.FC<RumorHeaderRowProps> = ({
               </a>
             )}
           </div>
-          <div className="text-xs sm:text-sm text-[#E3DBC7]/75 truncate mt-0.5 font-mono">
+          <div className="text-xs text-[#E3DBC7]/70 truncate mt-0.5 font-mono">
             {isAddressUnlocked ? 'USM Studio (Concierge Gate 02)' : 'RSVP to See Address'}
           </div>
         </div>
 
         {!isAddressUnlocked && (
-          <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono font-medium bg-[#E3DBC7]/10 border border-[#E3DBC7]/20 text-[#E3DBC7] shrink-0">
+          <span className="px-3 py-1.5 rounded-full text-xs font-mono font-medium bg-[#E3DBC7]/10 border border-[#E3DBC7]/20 text-[#E3DBC7] shrink-0">
             RSVP to Reveal
           </span>
         )}

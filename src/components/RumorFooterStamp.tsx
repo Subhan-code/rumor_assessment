@@ -7,14 +7,14 @@ export const RumorFooterStamp: React.FC = () => {
     <footer className="mt-12 mb-20 p-6 sm:p-8 rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.03] select-none text-[#E3DBC7] space-y-6">
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
         {/* Left Column: Brand & Tagline */}
-        <div className="space-y-2 max-w-md">
+        <div className="space-y-1.5 max-w-md">
           <div className="text-xs font-mono tracking-widest uppercase text-[#E3DBC7]/60 font-semibold">
             AFTERTASTE × USM
           </div>
-          <h3 className="font-display text-2xl sm:text-3xl font-normal tracking-tight text-[#E3DBC7]">
+          <h3 className="font-display text-lg sm:text-xl font-bold tracking-tight text-[#E3DBC7]">
             Leave an Aftertaste.
           </h3>
-          <p className="text-xs sm:text-sm text-[#E3DBC7]/70 font-normal leading-relaxed pt-1">
+          <p className="text-xs sm:text-sm text-[#E3DBC7]/65 font-normal leading-relaxed pt-0.5">
             Armory Week 2026. A strictly phone-free sensory experience with select brands. Address revealed upon RSVP.
           </p>
         </div>
@@ -65,7 +65,7 @@ export const RumorFooterStamp: React.FC = () => {
       {/* Colophon Divider */}
       <div className="pt-5 border-t border-[#E3DBC7]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono text-[#E3DBC7]/60">
         <div>
-          Private Studio · New York (RSVP to see event address)
+          Private Studio, New York (RSVP to see event address)
         </div>
 
         <div className="flex items-center gap-2 text-[11px]">
