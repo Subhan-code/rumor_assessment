@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { RsvpFormData } from '../types';
 
 interface RsvpSheetProps {
@@ -86,33 +87,41 @@ export const RsvpSheet: React.FC<RsvpSheetProps> = ({ isOpen, onClose, onSuccess
     }, 850);
   };
 
-  if (!isOpen) return null;
-
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden flex justify-end">
-      {/* Backdrop */}
-      <div
-        className="fixed inset-0 bg-black/40 backdrop-blur-md transition-opacity"
-        onClick={onClose}
-        aria-hidden="true"
-      />
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-50 overflow-hidden flex justify-end">
+          {/* Backdrop with Apple Blur */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.19, 1, 0.22, 1] }}
+            className="fixed inset-0 bg-black/45 backdrop-blur-xl"
+            onClick={onClose}
+            aria-hidden="true"
+          />
 
-      {/* Sheet Container */}
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="rsvp-title"
-        className="relative z-10 w-full max-w-lg h-full bg-[#FAF8F5] border-l border-black/10 p-6 sm:p-10 flex flex-col justify-between overflow-y-auto text-neutral-900 shadow-2xl"
-      >
-        {/* Header */}
-        <div>
-          <div className="flex items-center justify-between pb-5 border-b border-black/[0.08]">
+          {/* Sheet Container with Apple Critically Damped Slide-in Spring */}
+          <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="rsvp-title"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', duration: 0.38, bounce: 0 }}
+            className="relative z-10 w-full max-w-lg h-full bg-[#FAF8F5] border-l border-white/80 p-6 sm:p-10 flex flex-col justify-between overflow-y-auto text-neutral-900 shadow-[0_0_50px_rgba(0,0,0,0.25)]"
+          >
+            {/* Header */}
             <div>
-              <div className="text-[10px] font-mono tracking-widest uppercase text-[#D33E0B] font-semibold">
-                Aftertaste × USM Haller
-              </div>
-              <h2 id="rsvp-title" className="font-romie text-2xl sm:text-3xl font-normal tracking-tight text-neutral-900 mt-1">
-                Request An Invitation
+              <div className="flex items-center justify-between pb-5 border-b border-black/[0.08]">
+                <div>
+                  <div className="text-[10px] font-mono tracking-widest uppercase text-[#D33E0B] font-bold">
+                    Aftertaste × USM Haller
+                  </div>
+                  <h2 id="rsvp-title" className="font-romie text-2xl sm:text-3xl font-normal tracking-apple-title text-neutral-900 mt-1">
+                    Request An Invitation
               </h2>
             </div>
 
@@ -127,7 +136,7 @@ export const RsvpSheet: React.FC<RsvpSheetProps> = ({ isOpen, onClose, onSuccess
           </div>
 
           <p className="text-xs sm:text-sm text-neutral-600 mt-3.5 leading-relaxed font-normal">
-            Thursday, September 24 — Opening Night of Armory Week at 53 Scott Ave. Seating is strictly limited to 30 VIP dinner guests followed by the 10:00 PM salon.
+            Thursday, September 24 — Opening Night of Armory Week · Private Loft, Brooklyn. Full venue address & secret access key revealed immediately upon RSVP registration.
           </p>
         </div>
 
@@ -248,14 +257,40 @@ export const RsvpSheet: React.FC<RsvpSheetProps> = ({ isOpen, onClose, onSuccess
                 />
               </div>
 
-              {/* Submit Button */}
+              {/* Multiple State Button (animations-vault pattern) */}
               <div className="pt-2">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 rounded-full bg-[#D33E0B] text-white font-sans-ui text-xs tracking-wider uppercase font-bold hover:bg-[#E54812] active:scale-[0.99] transition-all cursor-pointer disabled:opacity-50 shadow-md shadow-[#D33E0B]/20"
+                  className="w-full py-3.5 rounded-full bg-[#D33E0B] text-white font-sans-ui text-xs tracking-wider uppercase font-bold hover:bg-[#E54812] active:scale-[0.98] transition-all cursor-pointer disabled:opacity-85 shadow-md shadow-[#D33E0B]/25 overflow-hidden relative"
                 >
-                  {isSubmitting ? 'Transmitting Request...' : 'Submit RSVP Request'}
+                  <AnimatePresence mode="popLayout" initial={false}>
+                    {isSubmitting ? (
+                      <motion.span
+                        key="submitting"
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -15 }}
+                        transition={{ type: 'spring', duration: 0.25, bounce: 0 }}
+                        className="flex items-center justify-center gap-2"
+                      >
+                        <span className="size-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin inline-block" />
+                        <span>Transmitting RSVP & Unlocking Address...</span>
+                      </motion.span>
+                    ) : (
+                      <motion.span
+                        key="idle"
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -15 }}
+                        transition={{ type: 'spring', duration: 0.25, bounce: 0 }}
+                        className="flex items-center justify-center gap-2"
+                      >
+                        <span>Submit RSVP & Reveal Address</span>
+                        <span className="font-bold">→</span>
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
                 </button>
               </div>
             </form>
@@ -301,8 +336,10 @@ export const RsvpSheet: React.FC<RsvpSheetProps> = ({ isOpen, onClose, onSuccess
           <span>Phone-Free Protocol</span>
           <span>Armory Week 2026</span>
         </div>
-      </div>
+      </motion.div>
     </div>
+      )}
+    </AnimatePresence>
   );
 };
 

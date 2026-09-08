@@ -1,51 +1,32 @@
 import React from 'react';
+import { triggerHaptic } from '../lib/haptics';
 
 interface RumorStickyRsvpProps {
   onOpenRsvp: () => void;
+  isAddressUnlocked: boolean;
 }
 
-export const RumorStickyRsvp: React.FC<RumorStickyRsvpProps> = ({ onOpenRsvp }) => {
-  return (
-    <>
-      {/* Bottom Gradient Fade */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none fixed inset-x-0 bottom-0 z-20 h-40 ticket-footer-fade"
-      />
+export const RumorStickyRsvp: React.FC<RumorStickyRsvpProps> = ({
+  onOpenRsvp,
+  isAddressUnlocked,
+}) => {
+  const handleClick = () => {
+    triggerHaptic('light');
+    onOpenRsvp();
+  };
 
-      {/* Floating Centered RSVP Button Container */}
-      <div className="fixed inset-x-0 bottom-0 z-30 flex w-full justify-center px-5 pb-6 md:px-20 md:pb-8">
-        <div className="w-full md:max-w-md">
-          <div className="pointer-events-none flex w-full flex-col items-center justify-center gap-2 md:flex-row">
-            <div className="pointer-events-auto w-full flex-1">
-              <button
-                type="button"
-                onClick={onOpenRsvp}
-                className="flex h-16 w-full ticket-press-soft items-center justify-center gap-2 rounded-full text-base font-medium focus-visible:ring-3 focus-visible:ring-black/20 focus-visible:outline-none md:h-auto md:py-5 text-black border border-white/60 cursor-pointer backdrop-blur-2xl"
-                style={{ backgroundColor: 'rgba(208, 199, 193, 0.6)' }}
-              >
-                <svg
-                  viewBox="0 0 20 20"
-                  width="20"
-                  height="20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4 shrink-0 text-black"
-                >
-                  <path
-                    d="M16.6667 5L7.50004 14.1667L3.33337 10"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                <span>Request an RSVP</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+  return (
+    <div className="fixed inset-x-0 bottom-0 z-30 flex justify-center pointer-events-none px-4 pb-4 sm:pb-6">
+      <button
+        type="button"
+        onClick={handleClick}
+        className="pointer-events-auto w-full sm:w-auto h-14 sm:h-12 px-6 sm:px-10 sm:min-w-[210px] sm:hover:min-w-[260px] sm:hover:px-12 rounded-full bg-[#C6532C] hover:bg-[#B84A25] text-[#F0E9DC] text-[15px] sm:text-sm font-medium tracking-tight border border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.45)] transition-all duration-300 ease-out active:scale-[0.98] sm:active:scale-[0.97] cursor-pointer select-none flex items-center justify-center gap-2"
+      >
+        <span>{isAddressUnlocked ? 'View Guest Pass' : 'Request an RSVP'}</span>
+        <span className="text-xs opacity-75 sm:hidden">→</span>
+      </button>
+    </div>
   );
 };
+
+export default RumorStickyRsvp;

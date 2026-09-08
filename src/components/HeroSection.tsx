@@ -83,12 +83,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRsvp, onExplore 
         <div className="mt-6 md:mt-8 p-1.5 rounded-3xl glass-card relative overflow-hidden group">
           <div className="relative aspect-[16/10] sm:aspect-[21/9] rounded-[20px] overflow-hidden bg-neutral-950">
             <img
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85"
+              src="/hero-pic.jpg"
               alt="USM Studio Apartment interior at 53 Scott Ave"
               className="w-full h-full object-cover grayscale-[15%] contrast-110 group-hover:scale-103 transition-transform duration-1000 ease-out opacity-85"
-              referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-black/50" />
 
             {/* Live Badges Floating on Stage */}
             <div className="absolute top-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2 text-xs font-sans-ui">

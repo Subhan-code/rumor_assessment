@@ -49,20 +49,20 @@ export const ContactOrganizerModal: React.FC<ContactOrganizerModalProps> = ({
         onClick={onClose}
       />
 
-      <div className="relative w-full max-w-[min(92vw,520px)] max-h-[88dvh] overflow-y-auto bg-white/95 border border-white/80 rounded-3xl p-[clamp(18px,3.5vw,32px)] shadow-[0_20px_60px_rgba(0,0,0,0.12)] text-neutral-900 z-10">
-        <div className="flex items-start justify-between pb-4 border-b border-black/[0.08]">
+      <div className="relative w-full max-w-[min(92vw,520px)] max-h-[88dvh] overflow-y-auto bg-[#11100E] border border-[#26231F] rounded-[24px] p-[clamp(18px,3.5vw,32px)] shadow-[0_20px_60px_rgba(0,0,0,0.6)] text-[#F0E9DC] z-10">
+        <div className="flex items-start justify-between pb-4 border-b border-[#26231F]">
           <div>
-            <div className="text-[10px] font-mono tracking-widest uppercase text-[#D33E0B] font-semibold">
+            <div className="text-[10px] font-mono tracking-widest uppercase text-[#C6532C] font-medium">
               Organizer Inquiry
             </div>
-            <h3 className="font-romie text-2xl sm:text-3xl font-normal tracking-tight text-neutral-900 mt-1">
+            <h3 className="font-romie text-2xl sm:text-3xl font-normal tracking-tight text-[#F0E9DC] mt-1">
               Contact Curators
             </h3>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-black/5 hover:bg-black/10 text-neutral-700 flex items-center justify-center transition-colors font-mono text-xs cursor-pointer"
+            className="w-8 h-8 rounded-full bg-[#151411] hover:bg-[#181613] text-[#AAA195] hover:text-[#F0E9DC] flex items-center justify-center transition-colors font-mono text-xs cursor-pointer border border-[#26231F]"
           >
             ✕
           </button>
@@ -71,69 +71,69 @@ export const ContactOrganizerModal: React.FC<ContactOrganizerModalProps> = ({
         {!isSent ? (
           <form onSubmit={handleSubmit} className="py-5 space-y-3.5">
             <div>
-              <label className="block text-xs font-mono tracking-wider uppercase text-neutral-600 mb-1 font-medium">
+              <label className="block text-xs font-mono tracking-wider uppercase text-[#AAA195] mb-1 font-medium">
                 Your Name
               </label>
               <input
-                required
                 type="text"
+                required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/[0.03] border border-black/10 text-neutral-900 font-sans-ui text-sm focus:outline-none focus:border-[#D33E0B] focus:bg-white transition-all"
-                placeholder="Name"
+                placeholder="e.g. Elena Rostova"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-[#0A0908] border border-[#26231F] text-[#F0E9DC] placeholder-[#777067] focus:outline-none focus:border-[#C6532C] text-sm font-sans"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-mono tracking-wider uppercase text-neutral-600 mb-1 font-medium">
+              <label className="block text-xs font-mono tracking-wider uppercase text-[#AAA195] mb-1 font-medium">
                 Email Address
               </label>
               <input
-                required
                 type="email"
+                required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/[0.03] border border-black/10 text-neutral-900 font-sans-ui text-sm focus:outline-none focus:border-[#D33E0B] focus:bg-white transition-all"
-                placeholder="name@email.com"
+                placeholder="you@domain.com"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-[#0A0908] border border-[#26231F] text-[#F0E9DC] placeholder-[#777067] focus:outline-none focus:border-[#C6532C] text-sm font-sans"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-mono tracking-wider uppercase text-neutral-600 mb-1 font-medium">
-                Message / Press / Dietary Inquiry
+              <label className="block text-xs font-mono tracking-wider uppercase text-[#AAA195] mb-1 font-medium">
+                Message / Press / Dietary Note
               </label>
               <textarea
                 required
                 rows={3}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-black/[0.03] border border-black/10 text-neutral-900 font-sans-ui text-sm focus:outline-none focus:border-[#D33E0B] focus:bg-white transition-all resize-none"
-                placeholder="Inquiry for Aftertaste × USM team..."
+                placeholder="Regarding seating, press credentials, or private collection inquiry..."
+                className="w-full px-3.5 py-2.5 rounded-xl bg-[#0A0908] border border-[#26231F] text-[#F0E9DC] placeholder-[#777067] focus:outline-none focus:border-[#C6532C] text-sm font-sans resize-none"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full py-3.5 rounded-full bg-[#D33E0B] text-white font-sans-ui text-xs tracking-wider uppercase font-bold hover:bg-[#E54812] active:scale-[0.99] transition-all cursor-pointer shadow-md shadow-[#D33E0B]/20 mt-2"
+              className="w-full py-3.5 rounded-full bg-[#C6532C] hover:bg-[#D06138] text-[#F0E9DC] font-mono text-xs tracking-wider uppercase font-medium border border-[rgba(240,233,220,0.18)] shadow-[0_8px_24px_rgba(0,0,0,0.18)] active:scale-[0.99] transition-all cursor-pointer mt-2"
             >
               Send Inquiry
             </button>
           </form>
         ) : (
           <div className="py-10 text-center space-y-2">
-            <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto text-lg font-bold">
+            <div className="w-12 h-12 rounded-full bg-[#777A68]/15 text-[#777A68] border border-[#777A68]/30 flex items-center justify-center mx-auto text-lg font-medium">
               ✓
             </div>
-            <div className="font-romie text-2xl font-normal text-neutral-900">
+            <div className="font-romie text-2xl font-normal text-[#F0E9DC]">
               Message Sent
             </div>
-            <p className="text-xs text-neutral-600 max-w-xs mx-auto">
+            <p className="text-xs text-[#AAA195] max-w-xs mx-auto">
               The curators will review your inquiry shortly.
             </p>
           </div>
         )}
 
-        <div className="pt-3.5 border-t border-black/[0.08] flex items-center justify-between text-[11px] font-mono text-neutral-500">
+        <div className="pt-3.5 border-t border-[#26231F] flex items-center justify-between text-[11px] font-mono text-[#AAA195]">
           <span>Curatorial Team</span>
           <span>53 Scott Ave · Brooklyn</span>
         </div>
@@ -141,4 +141,3 @@ export const ContactOrganizerModal: React.FC<ContactOrganizerModalProps> = ({
     </div>
   );
 };
-

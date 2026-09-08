@@ -31,15 +31,15 @@ export const CabinetItemModal: React.FC<CabinetItemModalProps> = ({ item, onClos
         onClick={onClose}
       />
 
-      {/* Modal Surface: Rumor Frosted Card - Viewport Ratio Adaptive */}
-      <div className="relative w-full max-w-[min(92vw,560px)] max-h-[88dvh] overflow-y-auto info-card-bg rounded-[28px] border border-white/80 p-[clamp(18px,3.5vw,32px)] shadow-[0_20px_50px_rgba(0,0,0,0.12)] z-10 text-neutral-900 bg-white/90 backdrop-blur-2xl">
+      {/* Modal Surface: Rumor Frosted Card */}
+      <div className="relative w-full max-w-[min(92vw,560px)] max-h-[88dvh] overflow-y-auto rounded-[28px] border border-[#2A2926] p-[clamp(18px,3.5vw,32px)] shadow-[0_20px_50px_rgba(0,0,0,0.6)] z-10 text-[#F1EBDD] bg-[#151412]">
         {/* Header Bar */}
-        <div className="flex items-start justify-between gap-4 pb-4 border-b border-black/[0.08]">
+        <div className="flex items-start justify-between gap-4 pb-4 border-b border-[#2A2926]">
           <div>
-            <div className="text-[11px] font-mono tracking-widest uppercase text-[#D33E0B] font-semibold">
+            <div className="text-[11px] font-mono tracking-widest uppercase text-[#C94116] font-semibold">
               {item.accentText} · {item.category}
             </div>
-            <h3 className="font-romie text-2xl sm:text-3xl font-normal tracking-tight text-neutral-900 mt-1">
+            <h3 className="font-romie text-2xl sm:text-3xl font-normal tracking-tight text-[#F1EBDD] mt-1">
               {item.title}
             </h3>
           </div>
@@ -47,7 +47,7 @@ export const CabinetItemModal: React.FC<CabinetItemModalProps> = ({ item, onClos
           <button
             type="button"
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-black/5 hover:bg-black/10 text-neutral-700 flex items-center justify-center transition-colors font-mono text-xs cursor-pointer"
+            className="w-8 h-8 rounded-full bg-[#1A1917] hover:bg-[#2A2926] text-[#A7A198] border border-[#2A2926] flex items-center justify-center transition-colors font-mono text-xs cursor-pointer"
             aria-label="Close compartment inspector"
           >
             ✕
@@ -56,18 +56,18 @@ export const CabinetItemModal: React.FC<CabinetItemModalProps> = ({ item, onClos
 
         {/* Modal Body */}
         <div className="py-5 space-y-4">
-          <p className="text-sm sm:text-base text-neutral-700 leading-relaxed font-normal">
+          <p className="text-sm sm:text-base text-[#A7A198] leading-relaxed font-normal">
             {item.fullDescription}
           </p>
 
-          <div className="p-4 rounded-2xl bg-black/[0.03] border border-black/[0.06] space-y-2.5">
-            <div className="text-[10px] font-mono tracking-widest uppercase text-neutral-500 font-semibold">
+          <div className="p-4 rounded-2xl bg-[#0A0A09] border border-[#2A2926] space-y-2.5">
+            <div className="text-[10px] font-mono tracking-widest uppercase text-[#A7A198] font-semibold">
               Artifact Specifications
             </div>
             <ul className="space-y-2">
               {item.details.map((detail, index) => (
-                <li key={index} className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-800">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#D33E0B] mt-1.5 shrink-0" />
+                <li key={index} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#F1EBDD]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C94116] mt-1.5 shrink-0" />
                   <span>{detail}</span>
                 </li>
               ))}
@@ -76,7 +76,7 @@ export const CabinetItemModal: React.FC<CabinetItemModalProps> = ({ item, onClos
         </div>
 
         {/* Footer */}
-        <div className="pt-4 border-t border-black/[0.08] flex items-center justify-between text-xs font-mono text-neutral-500">
+        <div className="pt-4 border-t border-[#2A2926] flex items-center justify-between text-xs font-mono text-[#A7A198]">
           <span>USM Haller Archival Bay</span>
           <span>Verified Relic 0{item.id}</span>
         </div>

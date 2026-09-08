@@ -1,143 +1,402 @@
 @import "tailwindcss";
 
+/* -------------------------------------------------------------------------- */
+/* CRAFT-FIRST TYPOGRAPHY: OpenRunde (Emil Kowalski / animations.dev)         */
+/* -------------------------------------------------------------------------- */
 @font-face {
-  font-family: 'Romie';
-  src: url('https://therumor.com/_next/static/media/Romie_Regular-s.p.15~rym7-dz4vr.woff?dpl=dpl_E3y9agNBfmtPBUJGxfTvR33up4ww') format('woff');
+  font-family: 'OpenRunde';
+  src: url('/fonts/OpenRunde-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Romie';
-  src: url('https://therumor.com/_next/static/media/Romie_Medium-s.p.0l__ajxs2r7be.woff?dpl=dpl_E3y9agNBfmtPBUJGxfTvR33up4ww') format('woff');
+  font-family: 'OpenRunde';
+  src: url('/fonts/OpenRunde-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Romie';
-  src: url('https://therumor.com/_next/static/media/Romie_Bold-s.p.09y9nmi83zt3g.woff?dpl=dpl_E3y9agNBfmtPBUJGxfTvR33up4ww') format('woff');
+  font-family: 'OpenRunde';
+  src: url('/fonts/OpenRunde-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenRunde';
+  src: url('/fonts/OpenRunde-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'ABCDiatype';
-  src: url('https://therumor.com/_next/static/media/ABCDiatypeVariable-s.p.0r2cns3shup9l.ttf?dpl=dpl_E3y9agNBfmtPBUJGxfTvR33up4ww') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'ABCDiatypeSemiMono';
-  src: url('https://therumor.com/_next/static/media/ABCDiatypeSemiMono_Medium-s.p.0f0tljninf~vb.otf?dpl=dpl_E3y9agNBfmtPBUJGxfTvR33up4ww') format('opentype');
-  font-weight: 400 500;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
-  /* The Rumor Design Tokens */
-  --font-dia: 'ABCDiatype', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-romie: 'Romie', serif;
-  --font-dm-mono: 'DM Mono', monospace;
-  --font-diasemimono: 'ABCDiatypeSemiMono', 'DM Mono', monospace;
+  /* High-Craft Typography Tokens: OpenRunde & Swiss Modernist Pairing */
+  --font-display: 'Cormorant Garamond', 'Instrument Serif', Georgia, serif;
+  --font-sans: 'OpenRunde', 'Inter', -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
 
-  --color-foreground: #0F0F0F;
-  --color-subtitle: #737373;
-  --color-near-black: #171717;
-  --color-support-dark-brown: #2D231E;
-  --color-orange: #D33E0B;
+  /* Human-Crafted Architectural Darkroom Palette */
+  --background: #0B0A09;
+  --foreground: #F0E9DC;
+  --foreground-secondary: #AAA195;
+  --muted: #777067;
+
+  --surface-dark: #131210;
+  --surface-dark-frame: #171613;
+  --border-dark: #23211D;
+  --border-dark-hover: #2E2B25;
+  --border-frame: #262420;
+
+  /* Warm Parchment / Aged Paper */
+  --paper: #DDD5C4;
+  --paper-deep: #D3C9B6;
+  --paper-border: #C5BBA8;
+  --paper-pill: #D7CEBD;
+  --paper-pill-border: #C7BDAB;
+  --paper-text: #171512;
+  --paper-copy: #3C3933;
+
+  /* USM Haller Rust & Terracotta Accent */
+  --accent: #C6532C;
+  --accent-hover: #D55E35;
+  --accent-dark: #A94425;
+
+  /* Muted Editorial Status */
+  --status-muted: #777A68;
+  --status-muted-bg: rgba(119, 122, 104, 0.14);
+  --status-muted-border: rgba(119, 122, 104, 0.32);
+
+  /* Legacy mappings */
+  --rust: var(--accent);
+  --rust-hover: var(--accent-hover);
+  --border: var(--border-dark);
+  --surface: var(--surface-dark);
+
+  /* Emil Kowalski / animations.dev Easing Curves */
+  --ease-out-custom: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-custom: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* Tactile Physical Shadows */
+  --shadow-dark-card: 0 10px 30px rgba(0, 0, 0, 0.22);
+  --shadow-experience-card: 0 16px 40px rgba(0, 0, 0, 0.28);
+  --shadow-cta: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Authentic Tactile Film Grain (Eliminates flat AI gradient banding) */
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
 }
 
 body {
-  font-family: var(--font-dia);
-  background-color: #F4F1EC;
-  color: var(--color-foreground);
+  position: relative;
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--foreground);
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
+  text-rendering: optimizeLegibility;
 }
 
-/* Typography Classes matching The Rumor */
-.font-romie {
-  font-family: var(--font-romie);
+/* -------------------------------------------------------------------------- */
+/* OPTICAL TYPOGRAPHY HIERARCHY                                                */
+/* -------------------------------------------------------------------------- */
+.font-romie,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
 }
 
-.font-dia {
-  font-family: var(--font-dia);
+.font-sans {
+  font-family: var(--font-sans);
+  text-wrap: pretty;
 }
 
-.font-mono,
-.font-dm-mono {
-  font-family: var(--font-dm-mono);
+.font-mono {
+  font-family: var(--font-mono);
+  font-feature-settings: 'zero', 'tnum';
+  font-variant-numeric: tabular-nums;
 }
 
-.font-diasemimono {
-  font-family: var(--font-diasemimono);
+/* Headings and Optical Tracking */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
 }
 
-/* Color utility bindings */
-.text-foreground {
-  color: var(--color-foreground);
+p {
+  text-wrap: pretty;
 }
 
-.text-subtitle {
-  color: var(--color-subtitle);
+.tracking-apple-display {
+  letter-spacing: -0.024em;
+  line-height: 1.08;
 }
 
-.text-near-black {
-  color: var(--color-near-black);
+.tracking-apple-title {
+  letter-spacing: -0.016em;
+  line-height: 1.18;
 }
 
-.text-shadow-event-title {
-  text-shadow: rgba(255, 255, 255, 0.25) 0px 5.255px 9.46px;
+.tracking-apple-headline {
+  letter-spacing: -0.01em;
+  line-height: 1.28;
 }
 
-/* The Rumor Signature Info Card System */
+.tracking-apple-body {
+  letter-spacing: -0.002em;
+  line-height: 1.65;
+}
+
+.tracking-apple-caption {
+  letter-spacing: 0.035em;
+}
+
+.tracking-apple-badge {
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* -------------------------------------------------------------------------- */
+/* CRAFT FOUNDATIONS: Architectural Materials & Depth                          */
+/* -------------------------------------------------------------------------- */
+.gallery-card {
+  background-color: var(--surface-dark);
+  border: 1px solid var(--border-dark);
+  box-shadow: var(--shadow-dark-card);
+  border-radius: 20px;
+  transition: border-color 160ms ease;
+}
+
+/* Rumor Info Card & Utility Tokens */
 .info-card-bg {
-  background-color: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
+  background-color: #11100E;
+  border: 1px solid #26231F;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
-.info-card-bg-subtle {
-  background-color: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+.text-content-neutral-body {
+  color: #AAA195;
 }
 
-/* The Rumor Ticket Soft Press */
+.h-33 {
+  height: 132px;
+}
+
+.gallery-card:hover {
+  border-color: var(--border-dark-hover);
+}
+
+.apple-card {
+  background-color: var(--surface-dark);
+  border: 1px solid var(--border-dark);
+  box-shadow: var(--shadow-dark-card);
+  border-radius: 20px;
+  transition: border-color 160ms ease;
+}
+
+.apple-card:hover {
+  border-color: var(--border-dark-hover);
+}
+
+/* Warm Parchment Surface with Fine Paper Materiality */
+.surface-ivory,
+.surface-paper {
+  background-color: var(--paper);
+  color: var(--paper-text);
+  border: 1px solid var(--paper-border);
+  box-shadow: var(--shadow-experience-card);
+  border-radius: 24px;
+  position: relative;
+}
+
+/* Refined Editorial Physical CTA Button (No Orange Glow) */
+.btn-rsvp-vibrant,
+.btn-rust-cta {
+  background: var(--accent);
+  color: var(--foreground);
+  font-weight: 500;
+  border: 1px solid rgba(240, 233, 220, 0.18);
+  box-shadow: var(--shadow-cta);
+  transition: width 0.35s var(--ease-out-custom), padding 0.35s var(--ease-out-custom), background-color 180ms ease, transform 140ms var(--ease-out-custom), border-color 180ms ease;
+  user-select: none;
+}
+
+.btn-rsvp-vibrant:hover,
+.btn-rust-cta:hover {
+  background: var(--accent-hover);
+  border-color: rgba(240, 233, 220, 0.3);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+}
+
+.btn-rsvp-vibrant:active,
+.btn-rust-cta:active {
+  background: var(--accent-dark);
+  transform: scale(0.985);
+}
+
+/* -------------------------------------------------------------------------- */
+/* TACTILE BUTTONS & PRESS RESPONSE                                            */
+/* -------------------------------------------------------------------------- */
+.apple-press {
+  transition: transform 140ms var(--ease-out-custom), opacity 140ms ease;
+  user-select: none;
+}
+
+.apple-press:active {
+  transform: scale(0.98);
+}
+
 .ticket-press-soft {
-  transition: transform 0.12s cubic-bezier(0.2, 0, 0, 1), background-color 0.15s ease, filter 0.15s ease;
+  transition: transform 0.18s var(--ease-out-custom), background-color 0.2s ease, box-shadow 0.25s ease-out;
 }
 
 .ticket-press-soft:active {
   transform: scale(0.985);
 }
 
-/* Custom scrollbar */
+/* -------------------------------------------------------------------------- */
+/* EMIL KOWALSKI TACTILE BUTTONS & PRESS RESPONSE                              */
+/* -------------------------------------------------------------------------- */
+.apple-press {
+  transition: transform 140ms var(--ease-out-custom), opacity 140ms ease;
+  user-select: none;
+}
+
+.apple-press:active {
+  transform: scale(0.97);
+}
+
+.apple-pill-btn {
+  background: var(--rust);
+  color: var(--foreground);
+  border: 1px solid rgba(224, 83, 38, 0.35);
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: transform 140ms var(--ease-out-custom), background-color 160ms ease, box-shadow 160ms ease;
+  box-shadow: 0 4px 14px rgba(201, 65, 22, 0.25);
+}
+
+.apple-pill-btn:hover {
+  background: var(--rust-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(201, 65, 22, 0.35);
+}
+
+.apple-pill-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(201, 65, 22, 0.2);
+}
+
+/* Input Fields: Inset Tactile Styling */
+input:not([data-clean-input]):not(.clean-input),
+textarea:not([data-clean-input]):not(.clean-input) {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+input:not([data-clean-input]):not(.clean-input)::placeholder,
+textarea:not([data-clean-input]):not(.clean-input)::placeholder {
+  color: var(--muted);
+}
+
+input:not([data-clean-input]):not(.clean-input):focus,
+textarea:not([data-clean-input]):not(.clean-input):focus {
+  border-color: var(--rust);
+  box-shadow: 0 0 0 3px rgba(201, 65, 22, 0.15);
+}
+
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
+
 ::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.12);
-  border-radius: 9999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.25);
+  background: #0A0A09;
 }
 
+::-webkit-scrollbar-thumb {
+  background: #2A2926;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3e3b35;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* BASE UI DRAWER & DIALOG SPECIFICATION TOKENS & TRANSITIONS                 */
+/* -------------------------------------------------------------------------- */
+:root {
+  --drawer-inset: 0px;
+  --drawer-bleed-background: #151412;
+  --drawer-overlay-min-opacity: 0.6;
+}
+
+[data-slot="drawer-overlay"],
+[data-slot="dialog-overlay"] {
+  transition: opacity 280ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+[data-slot="drawer-overlay"][data-starting-style],
+[data-slot="drawer-overlay"][data-ending-style],
+[data-slot="dialog-overlay"][data-starting-style],
+[data-slot="dialog-overlay"][data-ending-style] {
+  opacity: 0;
+}
+
+[data-slot="drawer-content"] {
+  transition: transform 320ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+[data-slot="drawer-content"][data-swiping] {
+  transition: none;
+}
+
+[data-slot="drawer-content"][data-swipe-direction="down"][data-starting-style],
+[data-slot="drawer-content"][data-swipe-direction="down"][data-ending-style] {
+  transform: translateY(100%);
+}
+
+[data-slot="drawer-content"][data-swipe-direction="up"][data-starting-style],
+[data-slot="drawer-content"][data-swipe-direction="up"][data-ending-style] {
+  transform: translateY(-100%);
+}
+
+[data-slot="dialog-content"] {
+  transition: opacity 240ms cubic-bezier(0.16, 1, 0.3, 1), transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-slot="dialog-content"][data-starting-style],
+[data-slot="dialog-content"][data-ending-style] {
+  opacity: 0;
+  transform: scale(0.95) translateY(8px);
+}
