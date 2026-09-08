@@ -157,6 +157,25 @@ html {
   }
 }
 
+/* -------------------------------------------------------------------------- */
+/* MOBILE ARCHITECTURAL GEOMETRY: SUBTLE ROUNDED RECTANGLES (NO BUBBLY PILLS) */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  .rounded-3xl,
+  .rounded-2xl {
+    border-radius: 8px !important;
+  }
+
+  .rounded-xl,
+  .rounded-lg {
+    border-radius: 6px !important;
+  }
+
+  .rounded-full {
+    border-radius: 6px !important;
+  }
+}
+
 body {
   position: relative;
   font-family: 'OpenRunde', -apple-system, BlinkMacSystemFont, sans-serif !important;

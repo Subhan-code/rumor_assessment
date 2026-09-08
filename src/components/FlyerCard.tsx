@@ -8,7 +8,7 @@ export const FlyerCard: React.FC<FlyerCardProps> = ({ onExpand }) => {
   return (
     <div className="relative w-full max-w-[400px] md:max-w-none mx-auto select-none">
       {/* Mounting Container */}
-      <div className="relative rounded-[20px] sm:rounded-[24px] border border-[#E3DBC7]/20 bg-[#E3DBC7]/[0.05] p-2.5 sm:p-3.5 shadow-xl">
+      <div className="relative rounded-lg sm:rounded-[24px] border border-[#E3DBC7]/20 bg-[#E3DBC7]/[0.05] p-2.5 sm:p-3.5 shadow-xl">
         <div
           role="button"
           tabIndex={0}
@@ -16,7 +16,7 @@ export const FlyerCard: React.FC<FlyerCardProps> = ({ onExpand }) => {
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') onExpand();
           }}
-          className="group relative cursor-pointer overflow-hidden rounded-[18px] aspect-square md:aspect-[4/5] bg-black border border-[#E3DBC7]/15 focus:outline-none focus:ring-2 focus:ring-[#E3DBC7]/50"
+          className="group relative cursor-pointer overflow-hidden rounded-md sm:rounded-[18px] aspect-square md:aspect-[4/5] bg-black border border-[#E3DBC7]/15 focus:outline-none focus:ring-2 focus:ring-[#E3DBC7]/50"
           title="Click to view full flyer"
         >
           <img
