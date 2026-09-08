@@ -47,24 +47,10 @@ export const EditorialHeroSection: React.FC<EditorialHeroSectionProps> = ({
           <button
             type="button"
             onClick={onOpenShare}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md sm:rounded-full text-xs font-mono font-medium bg-[#E3DBC7]/[0.08] hover:bg-[#E3DBC7]/[0.16] border border-[#E3DBC7]/20 text-[#E3DBC7] transition-all cursor-pointer shrink-0"
+            className="px-3 py-1 rounded-md sm:rounded-full text-xs font-mono font-medium bg-[#E3DBC7]/[0.08] hover:bg-[#E3DBC7]/[0.16] border border-[#E3DBC7]/20 text-[#E3DBC7] transition-all cursor-pointer shrink-0"
             title="Share Event"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-3.5 h-3.5 text-[#E3DBC7]/80"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="1.75"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
-              />
-            </svg>
-            <span>Share</span>
+            Share
           </button>
         )}
       </div>
