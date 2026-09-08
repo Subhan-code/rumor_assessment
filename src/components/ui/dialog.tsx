@@ -55,7 +55,7 @@ export const DialogContent = React.forwardRef<
         ref={ref}
         data-slot="dialog-content"
         className={cn(
-          'pointer-events-auto relative z-50 flex flex-col w-full max-w-[430px] sm:max-w-[540px] rounded-[32px] sm:rounded-[36px] bg-[#151412] text-[#F1EBDD] border border-[#2A2926] p-5 sm:p-7 shadow-[0_28px_80px_-16px_rgba(0,0,0,0.6)] outline-none overflow-hidden font-openRunde transition-all duration-300',
+          'pointer-events-auto relative z-50 flex flex-col w-full max-w-[430px] sm:max-w-[540px] rounded-[32px] sm:rounded-[36px] bg-[#000000] text-[#E3DBC7] border border-[#E3DBC7]/20 p-5 sm:p-7 shadow-[0_28px_80px_-16px_rgba(0,0,0,0.6)] outline-none overflow-hidden font-openRunde transition-all duration-300',
           className
         )}
         {...props}
@@ -63,7 +63,7 @@ export const DialogContent = React.forwardRef<
         {children}
         {showCloseButton && (
           <DialogPrimitive.Close
-            className="absolute right-4 top-4 size-7 rounded-full bg-[#1A1917] hover:bg-[#2A2926] active:scale-90 flex items-center justify-center text-[#A7A198] hover:text-[#F1EBDD] transition-all cursor-pointer border border-[#2A2926]"
+            className="absolute right-4 top-4 size-7 rounded-full bg-[#000000] hover:bg-[#000000] active:scale-90 flex items-center justify-center text-[#E3DBC7]/70 hover:text-[#E3DBC7] transition-all cursor-pointer border border-[#E3DBC7]/20"
             aria-label="Close"
           >
             <X className="h-3.5 w-3.5" />
@@ -102,11 +102,11 @@ DialogFooter.displayName = 'DialogFooter'
 export const DialogTitle = React.forwardRef<
   React.ComponentRef<typeof DialogPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
->(({ className, ...props }, ref) => (
+>((props, ref) => (
   <DialogPrimitive.Title
     ref={ref}
     data-slot="dialog-title"
-    className={cn('text-lg font-semibold tracking-tight text-[#F1EBDD] font-romie', className)}
+    className={cn('text-lg font-semibold tracking-tight text-[#E3DBC7] font-romie', props.className)}
     {...props}
   />
 ))
@@ -115,11 +115,11 @@ DialogTitle.displayName = 'DialogTitle'
 export const DialogDescription = React.forwardRef<
   React.ComponentRef<typeof DialogPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
->(({ className, ...props }, ref) => (
+>((props, ref) => (
   <DialogPrimitive.Description
     ref={ref}
     data-slot="dialog-description"
-    className={cn('text-xs text-[#A7A198] font-sans', className)}
+    className={cn('text-xs text-[#E3DBC7]/70 font-sans', props.className)}
     {...props}
   />
 ))

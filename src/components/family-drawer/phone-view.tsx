@@ -61,37 +61,37 @@ export const PhoneView = ({
     <div className="relative flex flex-col justify-between h-full min-h-[360px]">
       {/* Header */}
       <div className="pt-1">
-        <h2 className="text-[22px] sm:text-[24px] font-semibold text-[#F0E9DC] tracking-tight font-sans">
+        <h2 className="text-[22px] sm:text-[24px] font-semibold text-[#E3DBC7] tracking-tight font-sans">
           Enter Phone Number
         </h2>
-        <p className="mt-1 text-[13px] leading-relaxed text-[#AAA195]">
+        <p className="mt-1 text-[13px] leading-relaxed text-[#E3DBC7]/70">
           We&apos;ll send you a verification code
         </p>
       </div>
 
       {/* Styled Phone Input Form */}
       <form onSubmit={handleSubmit} className="my-auto flex flex-col gap-2.5 py-3 select-none">
-        <label htmlFor={inputId} className="text-xs font-medium text-[#AAA195]">
+        <label htmlFor={inputId} className="text-xs font-medium text-[#E3DBC7]/70">
           Phone
         </label>
 
-        <div className="relative flex h-13 w-full items-center rounded-2xl bg-[#11100E] border border-[#26231F] px-3.5 transition-all focus-within:border-[#C6532C] focus-within:ring-1 focus-within:ring-[#C6532C]/30">
+        <div className="relative flex h-13 w-full items-center rounded-2xl bg-[#000000] border border-[#E3DBC7]/20 px-3.5 transition-all focus-within:border-[#D33E0B] focus-within:ring-1 focus-within:ring-[#D33E0B]/30">
           {/* Country Selector Button */}
           <button
             type="button"
             onClick={() => setIsCountryPickerOpen(true)}
-            className="flex items-center gap-1.5 rounded-lg py-1 px-1 text-[14px] font-medium text-[#F0E9DC] hover:bg-[#1A1917] transition-colors cursor-pointer select-none shrink-0"
+            className="flex items-center gap-1.5 rounded-lg py-1 px-1 text-[14px] font-medium text-[#E3DBC7] hover:bg-[#000000] transition-colors cursor-pointer select-none shrink-0"
             aria-label="Select Country"
           >
             <span className="text-base leading-none">{selectedCountry.flag}</span>
-            <span className="font-semibold text-[13.5px] text-[#F0E9DC] font-mono">
+            <span className="font-semibold text-[13.5px] text-[#E3DBC7] font-mono">
               {selectedCountry.code}
             </span>
-            <ChevronDown className="h-3.5 w-3.5 text-[#AAA195]" />
+            <ChevronDown className="h-3.5 w-3.5 text-[#E3DBC7]/70" />
           </button>
 
           {/* Hairline Divider */}
-          <div className="mx-2.5 h-5 w-px bg-[#26231F] shrink-0" />
+          <div className="mx-2.5 h-5 w-px bg-[#E3DBC7]/20 shrink-0" />
 
           {/* Phone Input */}
           <input
@@ -102,19 +102,19 @@ export const PhoneView = ({
             value={phoneNumber}
             onChange={handlePhoneChange}
             placeholder={selectedCountry.code === '+1' ? '(555) 000-0000' : 'Mobile number'}
-            className="clean-input flex-1 min-w-0 bg-transparent border-0 ring-0 outline-none text-[16px] sm:text-[17px] font-mono font-medium text-[#F0E9DC] placeholder:text-[#555047] p-0 focus:outline-none focus:ring-0 shadow-none"
+            className="clean-input flex-1 min-w-0 bg-transparent border-0 ring-0 outline-none text-[16px] sm:text-[17px] font-mono font-medium text-[#E3DBC7] placeholder:text-[#E3DBC7]/40 p-0 focus:outline-none focus:ring-0 shadow-none"
           />
 
           {/* Validation Indicator */}
           {isValid && (
-            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 animate-in zoom-in-75 duration-150 ml-2">
+            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/40 animate-in zoom-in-75 duration-150 ml-2">
               <Check className="h-3 w-3 stroke-[3]" />
             </div>
           )}
         </div>
 
         {/* Urgency Callout */}
-        <p className="text-[12px] font-medium text-[#C6532C] flex items-center gap-1.5 px-0.5">
+        <p className="text-[12px] font-medium text-[#D33E0B] flex items-center gap-1.5 px-0.5">
           <span>Invites go fast. Be early.</span>
         </p>
 
@@ -124,9 +124,9 @@ export const PhoneView = ({
             type="checkbox"
             checked={marketingOptIn}
             onChange={(e) => setMarketingOptIn(e.target.checked)}
-            className="mt-0.5 h-4 w-4 rounded border-[#26231F] bg-[#11100E] text-[#C6532C] focus:ring-0 focus:ring-offset-0 cursor-pointer accent-[#C6532C]"
+            className="mt-0.5 h-4 w-4 rounded border-[#E3DBC7]/30 bg-[#000000] text-[#D33E0B] focus:ring-0 focus:ring-offset-0 cursor-pointer accent-[#D33E0B]"
           />
-          <span className="text-[11px] leading-snug text-[#AAA195]/80 group-hover:text-[#AAA195]">
+          <span className="text-[11px] leading-snug text-[#E3DBC7]/70 group-hover:text-[#E3DBC7]">
             Checking the box is optional: it opts you in to recurring automated marketing texts from Rumor about events and offers at the number you entered.
           </span>
         </label>
@@ -139,23 +139,23 @@ export const PhoneView = ({
           onClick={handleSubmit}
           disabled={!isValid}
           className={cn(
-            'flex h-12 w-full items-center justify-center rounded-full text-[15px] font-semibold tracking-tight transition-all',
+            'flex h-12 w-full items-center justify-center rounded-full text-[16.5px] font-semibold tracking-wide transition-all shadow-none',
             isValid
-              ? 'btn-rsvp-vibrant text-white shadow-lg active:scale-[0.98] cursor-pointer'
-              : 'bg-[#181715] text-[#777067] border border-[#26231F] cursor-not-allowed opacity-60'
+              ? 'btn-rsvp-vibrant text-[#E3DBC7] active:scale-[0.98] cursor-pointer'
+              : 'bg-[#000000] text-[#E3DBC7]/40 border border-[#E3DBC7]/20 cursor-not-allowed opacity-60'
           )}
         >
           Continue
         </button>
 
         {/* Legal Disclaimers with Links */}
-        <p className="px-1 text-center text-[10.5px] leading-relaxed text-[#777067]">
+        <p className="px-1 text-center text-[10.5px] leading-relaxed text-[#E3DBC7]/50">
           By clicking &apos;Continue&apos;, you agree to our{' '}
           <a
             href="https://www.therumor.com/terms-of-service"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline text-[#AAA195] hover:text-[#F0E9DC] transition-colors"
+            className="underline text-[#E3DBC7]/70 hover:text-[#E3DBC7] transition-colors"
           >
             Terms
           </a>{' '}
@@ -164,7 +164,7 @@ export const PhoneView = ({
             href="https://www.therumor.com/privacy-policy"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline text-[#AAA195] hover:text-[#F0E9DC] transition-colors"
+            className="underline text-[#E3DBC7]/70 hover:text-[#E3DBC7] transition-colors"
           >
             Privacy Policy
           </a>
@@ -174,27 +174,27 @@ export const PhoneView = ({
 
       {/* Country Picker Sheet Overlay */}
       {isCountryPickerOpen && (
-        <div className="absolute inset-0 z-30 flex flex-col rounded-[28px] bg-[#11100E] p-4 shadow-2xl border border-[#26231F] animate-in fade-in zoom-in-95 duration-150">
-          <div className="flex items-center justify-between pb-2 border-b border-[#26231F]">
-            <span className="text-[14px] font-medium text-[#F0E9DC]">Select Country</span>
+        <div className="absolute inset-0 z-30 flex flex-col rounded-[28px] bg-[#000000] p-4 shadow-2xl border border-[#E3DBC7]/20 animate-in fade-in zoom-in-95 duration-150">
+          <div className="flex items-center justify-between pb-2 border-b border-[#E3DBC7]/20">
+            <span className="text-[14px] font-medium text-[#E3DBC7]">Select Country</span>
             <button
               type="button"
               onClick={() => setIsCountryPickerOpen(false)}
-              className="size-7 rounded-full bg-[#151411] hover:bg-[#1A1917] flex items-center justify-center text-[#AAA195] hover:text-[#F0E9DC] cursor-pointer transition-colors"
+              className="size-7 rounded-full bg-[#000000] hover:bg-[#000000] flex items-center justify-center text-[#E3DBC7]/70 hover:text-[#E3DBC7] cursor-pointer transition-colors"
             >
               <X className="h-3.5 w-3.5" />
             </button>
           </div>
 
-          <div className="my-2 flex items-center gap-2 rounded-xl bg-[#151411] border border-[#26231F] px-3 py-1.5">
-            <Search className="h-3.5 w-3.5 text-[#AAA195]" />
+          <div className="my-2 flex items-center gap-2 rounded-xl bg-[#000000] border border-[#E3DBC7]/20 px-3 py-1.5">
+            <Search className="h-3.5 w-3.5 text-[#E3DBC7]/70" />
             <input
               type="text"
               data-clean-input=""
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search country or code..."
-              className="clean-input flex-1 min-w-0 bg-transparent border-0 ring-0 outline-none text-[13px] text-[#F0E9DC] placeholder:text-[#555047] p-0 focus:outline-none focus:ring-0 shadow-none"
+              className="clean-input flex-1 min-w-0 bg-transparent border-0 ring-0 outline-none text-[13px] text-[#E3DBC7] placeholder:text-[#E3DBC7]/40 p-0 focus:outline-none focus:ring-0 shadow-none"
             />
           </div>
 
@@ -211,15 +211,15 @@ export const PhoneView = ({
                 className={cn(
                   'flex w-full items-center justify-between rounded-xl px-2.5 py-2 text-left text-[13px] transition-colors cursor-pointer',
                   selectedCountry.iso === country.iso
-                    ? 'bg-[#C6532C]/15 text-[#F0E9DC] font-medium'
-                    : 'text-[#AAA195] hover:bg-[#151411] hover:text-[#F0E9DC]'
+                    ? 'bg-[#D33E0B]/15 text-[#E3DBC7] font-medium'
+                    : 'text-[#E3DBC7]/70 hover:bg-[#000000] hover:text-[#E3DBC7]'
                 )}
               >
                 <div className="flex items-center gap-2 truncate pr-2">
                   <span className="text-base shrink-0">{country.flag}</span>
                   <span className="truncate">{country.name}</span>
                 </div>
-                <span className="font-mono text-[12px] text-[#AAA195] shrink-0">{country.code}</span>
+                <span className="font-mono text-[12px] text-[#E3DBC7]/70 shrink-0">{country.code}</span>
               </button>
             ))}
           </div>

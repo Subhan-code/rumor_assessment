@@ -4,26 +4,36 @@ import React from 'react';
 
 export const EditorialHeroSection: React.FC = () => {
   return (
-    <section className="relative flex flex-col justify-between pt-4 pb-8 sm:pb-12 select-none">
-      <div className="flex items-center justify-between pb-4">
-        <span className="font-sans text-xs sm:text-sm font-medium tracking-tight text-[#F0E9DC]">
-          AFTERTASTE × USM
-        </span>
-        <span className="text-xs text-[#AAA195]">
-          Armory Week 2026
-        </span>
+    <div className="select-none space-y-4">
+      {/* Category & Phone-Free Highlight Badges */}
+      <div className="flex flex-wrap items-center gap-2">
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#E3DBC7]/[0.06] border border-[#E3DBC7]/15 text-xs font-mono text-[#E3DBC7]/80">
+          Opening Night of Armory Week
+        </div>
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#D33E0B]/15 border border-[#D33E0B]/30 text-xs font-mono text-[#E3DBC7] font-semibold tracking-wide">
+          Phone-Free Experience
+        </div>
       </div>
 
-      <div className="pt-8 sm:pt-12 max-w-2xl">
-        <h2 className="font-display text-4xl sm:text-5xl font-normal text-[#F0E9DC] tracking-tight leading-[1.08] mb-4">
-          The collector is away. <br />
-          <span className="text-[#DDD5C4]">The apartment is open.</span>
-        </h2>
-        <p className="text-base sm:text-lg leading-relaxed text-[#AAA195] font-normal max-w-xl">
-          A phone-free evening of design, culinary craft, vinyl sound, and contemporary art.
-        </p>
+      {/* Main Event Headline */}
+      <h1 className="font-display text-4xl sm:text-5xl lg:text-[56px] font-normal text-[#E3DBC7] tracking-tight leading-[1.08]">
+        The collector is away. <br />
+        <span className="text-[#E3DBC7]/90">The apartment is open.</span>
+      </h1>
+
+      {/* Deck Statement */}
+      <p className="text-base sm:text-lg text-[#E3DBC7]/80 leading-relaxed max-w-2xl font-normal">
+        On Thursday, September 24th, Aftertaste & USM host a strictly phone-free sensory experience with select brands. For the first time, USM invites New York’s creative class to converge in its private studio to consider the future of collecting. Devices are safely checked at arrival for unbroken presence.
+      </p>
+
+      {/* Mobile-Only Host Line */}
+      <div className="flex items-center gap-2 pt-1 pb-1 md:hidden">
+        <span className="text-xs text-[#E3DBC7]/60">Presented by</span>
+        <span className="text-xs font-semibold text-[#E3DBC7]">
+          Aftertaste & USM Haller
+        </span>
       </div>
-    </section>
+    </div>
   );
 };
 

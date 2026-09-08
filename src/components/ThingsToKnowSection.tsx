@@ -31,32 +31,42 @@ export const ThingsToKnowSection: React.FC = () => {
   ];
 
   return (
-    <section className="mb-12 py-2 select-none">
-      <div className="mb-6">
-        <h2 className="font-display text-2xl sm:text-3xl text-[#F0E9DC] font-normal tracking-tight">
+    <div className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.03] p-5 sm:p-7 select-none space-y-4">
+      {/* Card Title Divider */}
+      <div className="pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
+        <span className="text-xs font-mono uppercase tracking-wider text-[#E3DBC7]/60 font-medium">
           Things to Know
-        </h2>
-        <p className="mt-1 text-sm text-[#AAA195]">
-          Essential details for the evening.
-        </p>
+        </span>
+        <span className="text-[11px] font-mono text-[#E3DBC7]/40">
+          Salon Protocols
+        </span>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {guidelines.map((item) => (
-          <div
-            key={item.title}
-            className="p-4 rounded-2xl bg-[#11100E] space-y-1"
-          >
-            <h3 className="text-sm font-medium text-[#F0E9DC]">
-              {item.title}
-            </h3>
-            <p className="text-xs text-[#AAA195] leading-relaxed">
-              {item.description}
-            </p>
-          </div>
-        ))}
+      <div className="pt-1">
+        <h2 className="font-display text-2xl sm:text-3xl text-[#E3DBC7] font-normal tracking-tight mb-2">
+          Essential Protocols
+        </h2>
+        <p className="text-xs sm:text-sm text-[#E3DBC7]/75 mb-5">
+          Everything you need to know prior to arrival at the collector&apos;s residence.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {guidelines.map((item) => (
+            <div
+              key={item.title}
+              className="p-4 rounded-xl bg-[#E3DBC7]/[0.04] hover:bg-[#E3DBC7]/[0.07] border border-[#E3DBC7]/15 space-y-1.5 transition-colors"
+            >
+              <h3 className="text-sm font-semibold text-[#E3DBC7]">
+                {item.title}
+              </h3>
+              <p className="text-xs text-[#E3DBC7]/70 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 

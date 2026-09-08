@@ -125,14 +125,14 @@ export function OtpInput({
                 'relative flex items-center justify-center shrink-0 font-mono font-semibold transition-all duration-200 border',
                 scale.box,
                 status === 'error'
-                  ? 'border-red-500/80 bg-red-950/20 text-red-400 shadow-[0_0_0_1px_rgba(239,68,68,0.3)]'
+                  ? 'border-[#FF0000] bg-[#FF0000]/20 text-[#FF0000] shadow-[0_0_0_1px_rgba(255,0,0,0.4)]'
                   : status === 'success'
-                  ? 'border-emerald-500 bg-emerald-500/15 text-emerald-400 shadow-[0_0_0_1px_rgba(16,185,129,0.4)] ring-1 ring-emerald-500/60'
+                  ? 'border-[#10B981] bg-[#10B981]/15 text-[#10B981] shadow-[0_0_0_1px_rgba(16,185,129,0.4)] ring-1 ring-[#10B981]/60'
                   : isCurrent
-                  ? 'border-[#C6532C] bg-[#151411] shadow-[0_0_0_2px_rgba(198,83,44,0.25)] text-[#F0E9DC]'
+                  ? 'border-[#D33E0B] bg-[#000000] shadow-[0_0_0_2px_rgba(211,62,11,0.25)] text-[#E3DBC7]'
                   : isFilled
-                  ? 'border-[#302C26] bg-[#11100E] text-[#F0E9DC]'
-                  : 'border-[#26231F] bg-[#11100E] text-[#F0E9DC]/40',
+                  ? 'border-[#E3DBC7]/30 bg-[#000000] text-[#E3DBC7]'
+                  : 'border-[#E3DBC7]/20 bg-[#000000] text-[#E3DBC7]/40',
               )}
             >
               {/* Blinking rust cursor for current active empty slot */}
@@ -142,7 +142,7 @@ export function OtpInput({
                   animate={{ opacity: [1, 1, 0, 0] }}
                   transition={BLINK}
                   className={cn(
-                    'pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 rounded-full bg-[#C6532C] z-10',
+                    'pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 rounded-full bg-[#D33E0B] z-10',
                     scale.caret,
                   )}
                 />

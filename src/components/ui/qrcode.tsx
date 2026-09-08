@@ -100,7 +100,7 @@ export const QRCode: React.FC<QRCodeProps> = ({
       const coreSize = 3 * moduleSize
       const r = moduleSize * 1.0
 
-      const cutoutFill = bgColor === 'transparent' ? '#ffffff' : bgColor
+      const cutoutFill = bgColor === 'transparent' ? '#E3DBC7' : bgColor
 
       return (
         <g key={`fp-${i}`}>

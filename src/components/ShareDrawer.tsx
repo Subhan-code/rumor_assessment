@@ -69,16 +69,16 @@ export const ShareDrawer: React.FC<ShareDrawerProps> = ({
     >
       <DrawerContent
         showSwipeHandle={true}
-        className="w-[min(94vw,390px)] mx-auto p-0 pb-6 pt-1 rounded-t-[32px] sm:rounded-[36px] bg-[#151412] text-[#F1EBDD] border border-[#2A2926] shadow-2xl select-none font-openRunde overflow-hidden"
+        className="w-[min(94vw,390px)] mx-auto p-0 pb-6 pt-1 rounded-t-[32px] sm:rounded-[36px] bg-[#000000] text-[#E3DBC7] border border-[#E3DBC7]/20 shadow-2xl select-none font-openRunde overflow-hidden"
       >
         <div className="px-5 pt-2">
           {/* Top Header Row with Close Button */}
-          <div className="flex items-center justify-between pb-3 border-b border-[#26231F]">
+          <div className="flex items-center justify-between pb-3 border-b border-[#E3DBC7]/20">
             <div>
-              <h3 className="text-[18px] sm:text-[19px] font-normal text-[#F1EBDD] font-romie tracking-tight">
+              <h3 className="text-[18px] sm:text-[19px] font-normal text-[#E3DBC7] font-romie tracking-tight">
                 Share Invitation
               </h3>
-              <p className="text-xs text-[#AAA195]">
+              <p className="text-xs text-[#E3DBC7]/70">
                 53 Scott Ave · Armory Week 2026
               </p>
             </div>
@@ -87,7 +87,7 @@ export const ShareDrawer: React.FC<ShareDrawerProps> = ({
               type="button"
               onClick={onClose}
               aria-label="Close"
-              className="size-7 rounded-full bg-[#1A1917] hover:bg-[#2A2926] active:scale-90 flex items-center justify-center text-[#A7A198] hover:text-[#F1EBDD] transition-all cursor-pointer border border-[#2A2926]"
+              className="size-7 rounded-full bg-[#000000] hover:bg-[#000000] active:scale-90 flex items-center justify-center text-[#E3DBC7]/70 hover:text-[#E3DBC7] transition-all cursor-pointer border border-[#E3DBC7]/20"
             >
               <X className="h-3.5 w-3.5" />
             </button>
@@ -95,16 +95,16 @@ export const ShareDrawer: React.FC<ShareDrawerProps> = ({
 
           {/* Central QR Code Display */}
           <div className="py-5 flex flex-col items-center justify-center text-center">
-            <div className="w-[170px] h-[170px] rounded-2xl p-3 bg-white shadow-xl flex items-center justify-center transition-transform hover:scale-[1.02]">
+            <div className="w-[170px] h-[170px] rounded-2xl p-3 bg-[#E3DBC7] shadow-xl flex items-center justify-center transition-transform hover:scale-[1.02]">
               <QRCode
                 value={eventUrl}
                 size={146}
-                fgColor="#0A0908"
-                bgColor="#ffffff"
+                fgColor="#000000"
+                bgColor="#E3DBC7"
                 errorCorrectionLevel="M"
               />
             </div>
-            <p className="mt-3 text-xs text-[#AAA195]">
+            <p className="mt-3 text-xs text-[#E3DBC7]/70">
               Scan with any mobile camera to view invitation
             </p>
           </div>
@@ -115,16 +115,16 @@ export const ShareDrawer: React.FC<ShareDrawerProps> = ({
               <button
                 type="button"
                 onClick={handleCopyLink}
-                className="flex h-11 items-center justify-center gap-2 rounded-xl bg-[#1A1917] hover:bg-[#26231F] border border-[#26231F] text-[13px] font-medium text-[#F1EBDD] transition-all active:scale-[0.98] cursor-pointer"
+                className="flex h-11 items-center justify-center gap-2 rounded-xl bg-[#000000] hover:bg-[#000000] border border-[#E3DBC7]/20 text-[13px] font-medium text-[#E3DBC7] transition-all active:scale-[0.98] cursor-pointer"
               >
                 {copiedLink ? (
                   <>
-                    <Check className="h-3.5 w-3.5 text-emerald-400" />
-                    <span className="text-emerald-400">Copied</span>
+                    <Check className="h-3.5 w-3.5 text-[#E3DBC7]" />
+                    <span className="text-[#E3DBC7]">Copied</span>
                   </>
                 ) : (
                   <>
-                    <Copy className="h-3.5 w-3.5 text-[#AAA195]" />
+                    <Copy className="h-3.5 w-3.5 text-[#E3DBC7]/70" />
                     <span>Copy Link</span>
                   </>
                 )}
@@ -133,9 +133,9 @@ export const ShareDrawer: React.FC<ShareDrawerProps> = ({
               <button
                 type="button"
                 onClick={handleNativeShare}
-                className="btn-rsvp-vibrant flex h-11 items-center justify-center gap-2 rounded-xl text-[13px] font-semibold text-white transition-all active:scale-[0.98] cursor-pointer"
+                className="btn-rsvp-vibrant flex h-11 items-center justify-center gap-2 rounded-xl text-[13px] font-semibold text-[#E3DBC7] transition-all active:scale-[0.98] cursor-pointer"
               >
-                <Share2 className="h-3.5 w-3.5 text-white" />
+                <Share2 className="h-3.5 w-3.5 text-[#E3DBC7]" />
                 <span>Share</span>
               </button>
             </div>
@@ -143,9 +143,9 @@ export const ShareDrawer: React.FC<ShareDrawerProps> = ({
             <button
               type="button"
               onClick={handleAddToCalendar}
-              className="w-full flex h-10 items-center justify-center gap-2 rounded-xl bg-transparent hover:bg-[#1A1917] border border-[#26231F]/60 text-xs font-mono text-[#AAA195] hover:text-[#F1EBDD] transition-all active:scale-[0.98] cursor-pointer"
+              className="w-full flex h-10 items-center justify-center gap-2 rounded-xl bg-transparent hover:bg-[#000000] border border-[#E3DBC7]/20 text-xs font-mono text-[#E3DBC7]/70 hover:text-[#E3DBC7] transition-all active:scale-[0.98] cursor-pointer"
             >
-              <Calendar className="h-3.5 w-3.5 text-[#C6532C]" />
+              <Calendar className="h-3.5 w-3.5 text-[#D33E0B]" />
               <span>{addedCalendar ? 'Added to Calendar' : 'Add to Google Calendar'}</span>
             </button>
           </div>

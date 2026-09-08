@@ -32,14 +32,14 @@ export const CabinetItemModal: React.FC<CabinetItemModalProps> = ({ item, onClos
       />
 
       {/* Modal Surface: Rumor Frosted Card */}
-      <div className="relative w-full max-w-[min(92vw,560px)] max-h-[88dvh] overflow-y-auto rounded-[28px] border border-[#2A2926] p-[clamp(18px,3.5vw,32px)] shadow-[0_20px_50px_rgba(0,0,0,0.6)] z-10 text-[#F1EBDD] bg-[#151412]">
+      <div className="relative w-full max-w-[min(92vw,560px)] max-h-[88dvh] overflow-y-auto rounded-[28px] border border-[#E3DBC7]/20 p-[clamp(18px,3.5vw,32px)] shadow-[0_20px_60px_rgba(0,0,0,0.9)] z-10 text-[#E3DBC7] bg-[#000000]">
         {/* Header Bar */}
-        <div className="flex items-start justify-between gap-4 pb-4 border-b border-[#2A2926]">
+        <div className="flex items-start justify-between gap-4 pb-4 border-b border-[#E3DBC7]/20">
           <div>
-            <div className="text-[11px] font-mono tracking-widest uppercase text-[#C94116] font-semibold">
+            <div className="text-[11px] font-mono tracking-widest uppercase text-[#D33E0B] font-semibold">
               {item.accentText} · {item.category}
             </div>
-            <h3 className="font-romie text-2xl sm:text-3xl font-normal tracking-tight text-[#F1EBDD] mt-1">
+            <h3 className="font-romie text-2xl sm:text-3xl font-normal tracking-tight text-[#E3DBC7] mt-1">
               {item.title}
             </h3>
           </div>
@@ -47,7 +47,7 @@ export const CabinetItemModal: React.FC<CabinetItemModalProps> = ({ item, onClos
           <button
             type="button"
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-[#1A1917] hover:bg-[#2A2926] text-[#A7A198] border border-[#2A2926] flex items-center justify-center transition-colors font-mono text-xs cursor-pointer"
+            className="w-8 h-8 rounded-full bg-[#000000] hover:bg-[#000000] text-[#E3DBC7]/70 border border-[#E3DBC7]/20 flex items-center justify-center transition-colors font-mono text-xs cursor-pointer"
             aria-label="Close compartment inspector"
           >
             ✕
@@ -56,18 +56,28 @@ export const CabinetItemModal: React.FC<CabinetItemModalProps> = ({ item, onClos
 
         {/* Modal Body */}
         <div className="py-5 space-y-4">
-          <p className="text-sm sm:text-base text-[#A7A198] leading-relaxed font-normal">
+          <p className="text-sm sm:text-base text-[#E3DBC7]/70 leading-relaxed font-normal">
             {item.fullDescription}
           </p>
 
-          <div className="p-4 rounded-2xl bg-[#0A0A09] border border-[#2A2926] space-y-2.5">
-            <div className="text-[10px] font-mono tracking-widest uppercase text-[#A7A198] font-semibold">
+          {item.id === 'artist' && (
+            <div className="w-full aspect-[4/3] sm:aspect-[16/9] rounded-xl overflow-hidden border border-[#E3DBC7]/20 bg-black">
+              <img
+                src="/dylan-rose-rheingold.png"
+                alt="Dylan Rose Rheingold"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
+
+          <div className="p-4 rounded-2xl bg-[#000000] border border-[#E3DBC7]/20 space-y-2.5">
+            <div className="text-[10px] font-mono tracking-widest uppercase text-[#E3DBC7]/70 font-semibold">
               Artifact Specifications
             </div>
             <ul className="space-y-2">
               {item.details.map((detail, index) => (
-                <li key={index} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#F1EBDD]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C94116] mt-1.5 shrink-0" />
+                <li key={index} className="flex items-start gap-2 text-xs sm:text-sm text-[#E3DBC7]">
+                  <span className="font-mono text-[#E3DBC7]/50 select-none">–</span>
                   <span>{detail}</span>
                 </li>
               ))}
@@ -76,7 +86,7 @@ export const CabinetItemModal: React.FC<CabinetItemModalProps> = ({ item, onClos
         </div>
 
         {/* Footer */}
-        <div className="pt-4 border-t border-[#2A2926] flex items-center justify-between text-xs font-mono text-[#A7A198]">
+        <div className="pt-4 border-t border-[#E3DBC7]/20 flex items-center justify-between text-xs font-mono text-[#E3DBC7]/70">
           <span>USM Haller Archival Bay</span>
           <span>Verified Relic 0{item.id}</span>
         </div>

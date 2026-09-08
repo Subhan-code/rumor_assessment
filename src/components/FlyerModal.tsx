@@ -42,12 +42,12 @@ export const FlyerModal: React.FC<FlyerModalProps> = ({ isOpen, onClose }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 4 }}
             transition={{ type: 'spring', duration: 0.35, bounce: 0 }}
-            className="relative z-10 w-[min(90vw,calc(82dvh*0.8))] max-w-lg aspect-[4/5] max-h-[85dvh] rounded-[24px] overflow-hidden bg-[#0A0908] text-white shadow-[0_24px_60px_-12px_rgba(0,0,0,0.8)] border border-[#292620]"
+            className="relative z-10 w-[min(90vw,calc(82dvh*0.8))] max-w-lg aspect-[4/5] max-h-[85dvh] rounded-[24px] overflow-hidden bg-[#000000] text-[#E3DBC7] shadow-[0_24px_60px_-12px_rgba(0,0,0,0.95)] border border-[#E3DBC7]/20"
           >
             <button
               type="button"
               onClick={onClose}
-              className="apple-press absolute top-4 right-4 sm:top-5 sm:right-5 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[rgba(10,9,8,0.72)] hover:bg-[rgba(10,9,8,0.9)] backdrop-blur-md flex items-center justify-center text-[#F0E9DC] transition-all cursor-pointer border border-[rgba(240,233,220,0.3)] shadow-md"
+              className="apple-press absolute top-4 right-4 sm:top-5 sm:right-5 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#000000]/80 hover:bg-[#000000] backdrop-blur-md flex items-center justify-center text-[#E3DBC7] transition-all cursor-pointer border border-[#E3DBC7]/20 shadow-none"
               aria-label="Close flyer"
             >
               <X className="w-4 h-4" />

@@ -39,7 +39,7 @@ export const DrawerSwipeHandle = React.forwardRef<HTMLDivElement, DrawerSwipeHan
       ref={ref}
       data-slot="drawer-swipe-handle"
       className={cn(
-        'mx-auto mt-2.5 mb-1 h-1 w-10 shrink-0 rounded-full bg-[#2A2926] hover:bg-[#A7A198]/40 transition-colors cursor-grab active:cursor-grabbing select-none touch-none',
+        'mx-auto mt-2.5 mb-1 h-1 w-10 shrink-0 rounded-full bg-[#E3DBC7]/20 hover:bg-[#E3DBC7]/40 transition-colors cursor-grab active:cursor-grabbing select-none touch-none',
         className
       )}
       aria-label="Drag handle"
@@ -74,7 +74,7 @@ export const DrawerContent = React.forwardRef<
         ref={ref}
         data-slot="drawer-content"
         className={cn(
-          'pointer-events-auto relative z-50 flex flex-col w-full max-w-[440px] rounded-t-[32px] sm:rounded-[36px] bg-[#151412] text-[#F1EBDD] border border-[#2A2926] shadow-2xl outline-none overflow-hidden max-h-[calc(100dvh-2.5rem)] font-openRunde mb-0 sm:mb-6 transition-all duration-300',
+          'pointer-events-auto relative z-50 flex flex-col w-full max-w-[440px] rounded-t-[32px] sm:rounded-[36px] bg-[#000000] text-[#E3DBC7] border border-[#E3DBC7]/20 shadow-2xl outline-none overflow-hidden max-h-[calc(100dvh-2.5rem)] font-openRunde mb-0 sm:mb-6 transition-all duration-300',
           className
         )}
         {...props}
@@ -114,11 +114,11 @@ DrawerFooter.displayName = 'DrawerFooter'
 export const DrawerTitle = React.forwardRef<
   React.ComponentRef<typeof DrawerPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>
->(({ className, ...props }, ref) => (
+>((props, ref) => (
   <DrawerPrimitive.Title
     ref={ref}
     data-slot="drawer-title"
-    className={cn('text-lg font-semibold tracking-tight text-[#F1EBDD] font-romie', className)}
+    className={cn('text-lg font-semibold tracking-tight text-[#E3DBC7] font-romie', props.className)}
     {...props}
   />
 ))
@@ -127,11 +127,11 @@ DrawerTitle.displayName = 'DrawerTitle'
 export const DrawerDescription = React.forwardRef<
   React.ComponentRef<typeof DrawerPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>
->(({ className, ...props }, ref) => (
+>((props, ref) => (
   <DrawerPrimitive.Description
     ref={ref}
     data-slot="drawer-description"
-    className={cn('text-xs text-[#A7A198] font-sans', className)}
+    className={cn('text-xs text-[#E3DBC7]/70 font-sans', props.className)}
     {...props}
   />
 ))

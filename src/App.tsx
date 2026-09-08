@@ -4,9 +4,6 @@ import { FlyerCard } from './components/FlyerCard';
 import { FlyerModal } from './components/FlyerModal';
 import { RumorHeaderRow } from './components/RumorHeaderRow';
 import { RumorAboutSection } from './components/RumorAboutSection';
-import { RumorGuestExperienceSection } from './components/RumorGuestExperienceSection';
-import { RumorCuratedProgramSection } from './components/RumorCuratedProgramSection';
-import { RumorScheduleVenueSection } from './components/RumorScheduleVenueSection';
 import { CabinetItemModal } from './components/CabinetItemModal';
 import { RumorFooterStamp } from './components/RumorFooterStamp';
 import { RumorStickyRsvp } from './components/RumorStickyRsvp';
@@ -15,9 +12,8 @@ import FamilyDrawerComponent from './components/family-drawer/family-drawer-comp
 import { ContactOrganizerModal } from './components/ContactOrganizerModal';
 import { EditorialHeroSection } from './components/EditorialHeroSection';
 import { EditorialExperienceSection } from './components/EditorialExperienceSection';
-import { ThingsToKnowSection } from './components/ThingsToKnowSection';
 import { RumorLocationSection } from './components/RumorLocationSection';
-import { RumorHostsSection } from './components/RumorHostsSection';
+import { PresentedByCard, HostedByCard, HostActionLinks } from './components/RumorHostsSection';
 import { initGlobalHaptics } from './lib/haptics';
 import { CabinetDiscoveryItem } from './types';
 
@@ -28,25 +24,11 @@ export default function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isAddressUnlocked, setIsAddressUnlocked] = useState(false);
   const [selectedCabinetItem, setSelectedCabinetItem] = useState<CabinetDiscoveryItem | null>(null);
-  const [, setIsDesktop] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return window.innerWidth >= 1024;
-    }
-    return false;
-  });
 
   useEffect(() => {
-    const checkViewport = () => {
-      setIsDesktop(typeof window !== 'undefined' && window.innerWidth >= 1024);
-    };
-    checkViewport();
-    window.addEventListener('resize', checkViewport);
-
-    // Initialize subtle, tactile mobile & tablet haptics across all interactions
+    // Initialize subtle tactile mobile & tablet haptics across all interactions
     const cleanupHaptics = initGlobalHaptics();
-
     return () => {
-      window.removeEventListener('resize', checkViewport);
       cleanupHaptics?.();
     };
   }, []);
@@ -56,11 +38,8 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-dvh bg-[#0A0908] text-[#F0E9DC] selection:bg-[#C6532C] selection:text-[#F0E9DC] antialiased font-apple overflow-x-clip">
-      {/* Tactile Darkroom Grain (Eliminates flat digital gradient banding) */}
-      <div className="fixed inset-0 z-0 pointer-events-none bg-grain opacity-85" />
-
-      {/* Main Container: Drawer scaling and corner rounding directly on main page */}
+    <div className="relative min-h-dvh bg-black text-[#E3DBC7] selection:bg-[#D33E0B] selection:text-[#E3DBC7] antialiased font-apple overflow-x-clip">
+      {/* Main Container: Scaled smoothly when share drawer opens */}
       <motion.div
         animate={{
           scale: isShareOpen ? 0.94 : 1,
@@ -77,62 +56,72 @@ export default function App() {
           transformOrigin: 'top center',
           transform: isShareOpen ? undefined : 'none',
         }}
-        className="relative z-10 mx-auto max-w-[min(94vw,1240px)] px-[clamp(16px,2.5vw,28px)] pt-8 pb-32 md:py-12 md:pb-20"
+        className="relative z-10 mx-auto max-w-[1160px] px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 md:pt-12 pb-28 md:pb-24"
       >
-        <div className="flex flex-col gap-6 md:flex-row md:items-stretch md:gap-[clamp(24px,4.5vw,72px)]">
-          {/* Mobile Masthead */}
-          <div className="flex items-center justify-between md:hidden">
-            <h1 className="mb-2 ml-1 font-sans text-[clamp(28px,6vw,38px)] font-bold tracking-[-0.035em] text-[#F0E9DC]">
-              AFTERTASTE × USM
-            </h1>
-          </div>
-
-          {/* Left Column: Full-Height Sticky Track on Desktop */}
-          <div className="shrink-0 w-full md:w-[clamp(270px,27vw,350px)] md:self-stretch">
+        {/* Luma Two-Column Responsive Layout */}
+        <div className="flex flex-col md:flex-row items-start gap-8 lg:gap-12">
+          
+          {/* ================= LEFT COLUMN (Sticky Track on Desktop) ================= */}
+          <div className="w-full md:w-[320px] lg:w-[340px] shrink-0 space-y-4 md:sticky md:top-8 lg:top-10">
+            {/* 01 — Cover Artwork */}
             <FlyerCard onExpand={() => setIsFlyerModalOpen(true)} />
+
+            {/* Desktop Only Cards: Presented by, Hosted by, Actions */}
+            <div className="hidden md:flex flex-col space-y-4 pt-1">
+              <PresentedByCard onOpenShare={() => setIsShareOpen(true)} />
+              <HostedByCard />
+              <HostActionLinks
+                onContactOrganizer={() => setIsContactOpen(true)}
+                onOpenShare={() => setIsShareOpen(true)}
+              />
+            </div>
           </div>
 
-          {/* Right Column: Single Continuous Editorial Journey */}
-          <div className="min-w-0 flex-1 space-y-10 sm:space-y-14">
-            {/* 01 — HERO / INVITATION */}
-            <EditorialHeroSection />
+          {/* ================= RIGHT COLUMN (Main Content Stream) ================= */}
+          <div className="flex-1 min-w-0 space-y-6 sm:space-y-7">
+            {/* 01 — Event Top Meta (Pill, Title, Subtitle, Date & Place side by side on desktop) */}
+            <div className="space-y-4">
+              <EditorialHeroSection />
 
-            {/* When and Where Bento Row (Quick Details & Share) */}
-            <RumorHeaderRow
-              isAddressUnlocked={isAddressUnlocked}
-              onOpenRsvp={handleOpenRsvp}
-              onOpenShare={() => setIsShareOpen(true)}
-            />
-
-            {/* 02 — ABOUT THE EVENT */}
-            <div id="editorial-about">
-              <RumorAboutSection onOpenRsvp={handleOpenRsvp} />
+              {/* Date & Location Rows (Side by Side on Desktop) */}
+              <RumorHeaderRow
+                isAddressUnlocked={isAddressUnlocked}
+                onOpenRsvp={handleOpenRsvp}
+              />
             </div>
 
-            {/* 03 — THE EXPERIENCE / PHASES */}
+            {/* 02 — Phase 1: The Invitation */}
+            <div id="editorial-about">
+              <RumorAboutSection />
+            </div>
+
+            {/* 03 — Phases 2-4: The Search, The Discovery, Artist, Run of Show */}
             <EditorialExperienceSection onSelectItem={setSelectedCabinetItem} />
 
-            {/* 04 — THINGS TO KNOW */}
-            <ThingsToKnowSection />
-
-            {/* LOCATION */}
+            {/* 04 — Location & Map Content Card */}
             <RumorLocationSection
               isAddressUnlocked={isAddressUnlocked}
               onOpenRsvp={handleOpenRsvp}
             />
 
-            {/* THE HOSTS */}
-            <RumorHostsSection
-              onContactOrganizer={() => setIsContactOpen(true)}
-            />
+            {/* Mobile Only: Presented By & Hosted By (shown at bottom of stream on small screens) */}
+            <div className="md:hidden space-y-4 pt-2">
+              <PresentedByCard onOpenShare={() => setIsShareOpen(true)} />
+              <HostedByCard />
+              <HostActionLinks
+                onContactOrganizer={() => setIsContactOpen(true)}
+                onOpenShare={() => setIsShareOpen(true)}
+              />
+            </div>
 
-            {/* 09 — POWERED BY RUMOR & 10 — CREATED BY SYED SUBHAN */}
+            {/* 07 — Powered by Rumor & Created by Syed Subhan */}
             <RumorFooterStamp />
           </div>
+
         </div>
       </motion.div>
 
-      {/* Sticky Bottom RSVP Bar */}
+      {/* Sticky Bottom RSVP Bar for mobile */}
       <RumorStickyRsvp
         onOpenRsvp={handleOpenRsvp}
         isAddressUnlocked={isAddressUnlocked}

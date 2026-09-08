@@ -139,7 +139,7 @@ export const FamilyDrawerComponent: React.FC<FamilyDrawerProps> = ({
         showSwipeHandle={true}
         showCloseButton={false}
         className={cn(
-          'w-full max-w-[420px] sm:max-w-[540px] mx-auto p-0 border-[#2A2926] bg-[#151412] text-[#F1EBDD] font-openRunde rounded-t-[32px] sm:rounded-[36px] overflow-hidden transition-all duration-300',
+          'w-full max-w-[420px] sm:max-w-[540px] mx-auto p-0 border-[#E3DBC7]/20 bg-[#000000] text-[#E3DBC7] font-openRunde rounded-t-[32px] sm:rounded-[36px] overflow-hidden transition-all duration-300',
           view === 'confirmed' ? 'shadow-none' : 'shadow-2xl'
         )}
       >
@@ -149,7 +149,7 @@ export const FamilyDrawerComponent: React.FC<FamilyDrawerProps> = ({
             <button
               type="button"
               onClick={handleClose}
-              className="size-7 rounded-full bg-[#1A1917] hover:bg-[#2A2926] active:scale-90 flex items-center justify-center text-[#A7A198] hover:text-[#F1EBDD] transition-all cursor-pointer border border-[#2A2926]"
+              className="size-7 rounded-full bg-[#000000] hover:bg-[#000000] active:scale-90 flex items-center justify-center text-[#E3DBC7]/70 hover:text-[#E3DBC7] transition-all cursor-pointer border border-[#E3DBC7]/20"
               aria-label="Close"
             >
               <X className="h-3.5 w-3.5" />
@@ -207,16 +207,16 @@ export const FamilyDrawerComponent: React.FC<FamilyDrawerProps> = ({
   }
 
   return (
-    <Card className="relative flex min-h-[530px] w-full min-w-[350px] max-w-[440px] flex-col items-center justify-center rounded-[32px] border border-zinc-200/80 bg-white p-6 font-openRunde shadow-sm">
+    <Card className="relative flex min-h-[530px] w-full min-w-[350px] max-w-[440px] flex-col items-center justify-center rounded-[32px] border border-[#E3DBC7]/20 bg-[#000000] p-6 font-openRunde shadow-none">
       {triggerButton ? (
         triggerButton
       ) : (
         <Button
-          className="group flex items-center gap-2 rounded-full border border-zinc-200/90 bg-white px-7 py-3.5 text-[17px] font-semibold text-[#222222] shadow-xs transition-all hover:bg-zinc-50 hover:border-zinc-300 active:scale-95 cursor-pointer"
+          className="group flex items-center gap-2 rounded-full border border-[#E3DBC7]/20 bg-[#D33E0B] px-7 py-3.5 text-[17px] font-semibold text-[#E3DBC7] shadow-none transition-all hover:bg-[#C23907] active:scale-95 cursor-pointer"
           onClick={handleOpenRsvp}
         >
           RSVP
-          <Ticket className="h-4.5 w-4.5 text-zinc-500 transition-transform group-hover:scale-110" />
+          <Ticket className="h-4.5 w-4.5 text-[#E3DBC7] transition-transform group-hover:scale-110" />
         </Button>
       )}
       {drawerContent}

@@ -20,10 +20,10 @@ export const RumorStickyRsvp: React.FC<RumorStickyRsvpProps> = ({
       <button
         type="button"
         onClick={handleClick}
-        className="pointer-events-auto w-full sm:w-auto h-14 sm:h-12 px-6 sm:px-10 sm:min-w-[210px] sm:hover:min-w-[260px] sm:hover:px-12 rounded-full bg-[#C6532C] hover:bg-[#B84A25] text-[#F0E9DC] text-[15px] sm:text-sm font-medium tracking-tight border border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.45)] transition-all duration-300 ease-out active:scale-[0.98] sm:active:scale-[0.97] cursor-pointer select-none flex items-center justify-center gap-2"
+        className="pointer-events-auto w-full sm:w-auto h-14 px-8 sm:px-12 sm:min-w-[240px] sm:hover:min-w-[280px] rounded-full bg-[#D33E0B] hover:bg-[#C23907] text-[#E3DBC7] text-lg sm:text-xl font-semibold tracking-wide border border-[#E3DBC7]/20 shadow-none transition-all duration-300 ease-out active:scale-[0.98] sm:active:scale-[0.97] cursor-pointer select-none flex items-center justify-center gap-2.5"
       >
-        <span>{isAddressUnlocked ? 'View Guest Pass' : 'Request an RSVP'}</span>
-        <span className="text-xs opacity-75 sm:hidden">→</span>
+        <span className="text-[#E3DBC7]">{isAddressUnlocked ? 'View Guest Pass' : 'Request an RSVP'}</span>
+        <span className="text-base text-[#E3DBC7]/85 sm:hidden">→</span>
       </button>
     </div>
   );

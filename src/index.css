@@ -1,76 +1,94 @@
+@import url("https://p.typekit.net/p.css?s=1&k=jgs2owy&ht=tk&f=44512.44514.51549&a=864473&app=typekit&e=css");
 @import "tailwindcss";
 
-/* -------------------------------------------------------------------------- */
-/* CRAFT-FIRST TYPOGRAPHY: OpenRunde (Emil Kowalski / animations.dev)         */
-/* -------------------------------------------------------------------------- */
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * degular:
+ *   - http://typekit.com/eulas/00000000000000007735c86d
+ *   - http://typekit.com/eulas/00000000000000007735c872
+ *
+ * © 2009-2024 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2024-10-20 19:15:09 UTC"}*/
+
 @font-face {
-  font-family: 'OpenRunde';
-  src: url('/fonts/OpenRunde-Regular.woff2') format('woff2');
-  font-weight: 400;
+  font-family: "degular";
+  src: url("https://use.typekit.net/af/b6f240/0000000000000000774b907b/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),
+       url("https://use.typekit.net/af/b6f240/0000000000000000774b907b/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),
+       url("https://use.typekit.net/af/b6f240/0000000000000000774b907b/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-display: auto;
   font-style: normal;
-  font-display: swap;
+  font-weight: 200 800;
+  font-stretch: normal;
 }
 
 @font-face {
-  font-family: 'OpenRunde';
-  src: url('/fonts/OpenRunde-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+  font-family: "degular";
+  src: url("https://use.typekit.net/af/b6f240/0000000000000000774b907b/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),
+       url("https://use.typekit.net/af/b6f240/0000000000000000774b907b/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),
+       url("https://use.typekit.net/af/b6f240/0000000000000000774b907b/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-display: auto;
+  font-style: italic;
+  font-weight: 200 800;
+  font-variation-settings: "ital" 1;
+  font-stretch: normal;
 }
 
-@font-face {
-  font-family: 'OpenRunde';
-  src: url('/fonts/OpenRunde-Semibold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'OpenRunde';
-  src: url('/fonts/OpenRunde-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+@theme {
+  --font-sans: 'degular', sans-serif;
+  --font-serif: 'degular', sans-serif;
+  --font-mono: 'degular', monospace;
+  --font-display: 'degular', sans-serif;
+  --font-romie: 'degular', sans-serif;
+  --font-apple: 'degular', sans-serif;
+  --font-openRunde: 'degular', sans-serif;
 }
 
 :root {
-  /* High-Craft Typography Tokens: OpenRunde & Swiss Modernist Pairing */
-  --font-display: 'Cormorant Garamond', 'Instrument Serif', Georgia, serif;
-  --font-sans: 'OpenRunde', 'Inter', -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif;
-  --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  /* Exclusive Typography Token: degular */
+  --font-display: 'degular', sans-serif;
+  --font-sans: 'degular', sans-serif;
+  --font-mono: 'degular', monospace;
+  --font-romie: 'degular', sans-serif;
+  --font-apple: 'degular', sans-serif;
+  --font-openRunde: 'degular', sans-serif;
 
-  /* Human-Crafted Architectural Darkroom Palette */
-  --background: #0B0A09;
-  --foreground: #F0E9DC;
-  --foreground-secondary: #AAA195;
-  --muted: #777067;
+  /* Pitch Dark High-Contrast Architectural Palette (Strict 5-Color System) */
+  --background: #000000;
+  --foreground: #E3DBC7;
+  --foreground-secondary: rgba(227, 219, 199, 0.75);
+  --muted: rgba(227, 219, 199, 0.5);
 
-  --surface-dark: #131210;
-  --surface-dark-frame: #171613;
-  --border-dark: #23211D;
-  --border-dark-hover: #2E2B25;
-  --border-frame: #262420;
+  --surface-dark: rgba(227, 219, 199, 0.05);
+  --surface-dark-frame: rgba(227, 219, 199, 0.08);
+  --border-dark: rgba(227, 219, 199, 0.18);
+  --border-dark-hover: rgba(227, 219, 199, 0.35);
+  --border-frame: rgba(227, 219, 199, 0.2);
 
   /* Warm Parchment / Aged Paper */
-  --paper: #DDD5C4;
-  --paper-deep: #D3C9B6;
-  --paper-border: #C5BBA8;
-  --paper-pill: #D7CEBD;
-  --paper-pill-border: #C7BDAB;
-  --paper-text: #171512;
-  --paper-copy: #3C3933;
+  --paper: #000000;
+  --paper-deep: #000000;
+  --paper-border: rgba(227, 219, 199, 0.2);
+  --paper-pill: #000000;
+  --paper-pill-border: rgba(227, 219, 199, 0.2);
+  --paper-text: #E3DBC7;
+  --paper-copy: rgba(227, 219, 199, 0.75);
 
   /* USM Haller Rust & Terracotta Accent */
-  --accent: #C6532C;
-  --accent-hover: #D55E35;
-  --accent-dark: #A94425;
+  --accent: #D33E0B;
+  --accent-hover: #C23907;
+  --accent-dark: #C23907;
+  --rsvp-bg: #D33E0B;
+  --rsvp-text: #E3DBC7;
 
   /* Muted Editorial Status */
-  --status-muted: #777A68;
-  --status-muted-bg: rgba(119, 122, 104, 0.14);
-  --status-muted-border: rgba(119, 122, 104, 0.32);
+  --status-muted: rgba(227, 219, 199, 0.6);
+  --status-muted-bg: rgba(0, 0, 0, 0.6);
+  --status-muted-border: rgba(227, 219, 199, 0.2);
 
   /* Legacy mappings */
   --rust: var(--accent);
@@ -96,7 +114,7 @@
 
 body {
   position: relative;
-  font-family: var(--font-sans);
+  font-family: 'degular', sans-serif !important;
   background-color: var(--background);
   color: var(--foreground);
   margin: 0;
@@ -108,24 +126,29 @@ body {
 }
 
 /* -------------------------------------------------------------------------- */
-/* OPTICAL TYPOGRAPHY HIERARCHY                                                */
+/* UNIVERSAL DEGULAR APPLICATION (PROPER LOWERCASE & FLUSH MODERN SANS)       */
 /* -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after,
+html,
+body,
+button,
+input,
+textarea,
+select,
+h1, h2, h3, h4, h5, h6,
+p, span, a, label, div,
 .font-romie,
-.font-display {
-  font-family: var(--font-display);
-  letter-spacing: -0.015em;
-  text-wrap: balance;
-}
-
-.font-sans {
-  font-family: var(--font-sans);
-  text-wrap: pretty;
-}
-
-.font-mono {
-  font-family: var(--font-mono);
-  font-feature-settings: 'zero', 'tnum';
-  font-variant-numeric: tabular-nums;
+.font-display,
+.font-sans,
+.font-serif,
+.font-mono,
+.font-apple,
+.font-openRunde,
+.font-open-runde,
+.font-sans-ui {
+  font-family: 'degular', sans-serif !important;
 }
 
 /* Headings and Optical Tracking */
@@ -182,13 +205,13 @@ p {
 
 /* Rumor Info Card & Utility Tokens */
 .info-card-bg {
-  background-color: #11100E;
-  border: 1px solid #26231F;
+  background-color: rgba(227, 219, 199, 0.05);
+  border: 1px solid rgba(227, 219, 199, 0.2);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
 .text-content-neutral-body {
-  color: #AAA195;
+  color: #E3DBC7;
 }
 
 .h-33 {
@@ -222,29 +245,32 @@ p {
   position: relative;
 }
 
-/* Refined Editorial Physical CTA Button (No Orange Glow) */
+/* Refined Editorial Physical CTA Button (No Shadow) */
 .btn-rsvp-vibrant,
 .btn-rust-cta {
-  background: var(--accent);
-  color: var(--foreground);
-  font-weight: 500;
-  border: 1px solid rgba(240, 233, 220, 0.18);
-  box-shadow: var(--shadow-cta);
+  background: #D33E0B !important;
+  color: #E3DBC7 !important;
+  font-weight: 600;
+  border: 1px solid rgba(227, 219, 199, 0.25);
+  box-shadow: none !important;
   transition: width 0.35s var(--ease-out-custom), padding 0.35s var(--ease-out-custom), background-color 180ms ease, transform 140ms var(--ease-out-custom), border-color 180ms ease;
   user-select: none;
 }
 
 .btn-rsvp-vibrant:hover,
 .btn-rust-cta:hover {
-  background: var(--accent-hover);
-  border-color: rgba(240, 233, 220, 0.3);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  background: #C23907 !important;
+  color: #E3DBC7 !important;
+  border-color: rgba(227, 219, 199, 0.4);
+  box-shadow: none !important;
 }
 
 .btn-rsvp-vibrant:active,
 .btn-rust-cta:active {
-  background: var(--accent-dark);
+  background: #C23907 !important;
+  color: #E3DBC7 !important;
   transform: scale(0.985);
+  box-shadow: none !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -282,22 +308,22 @@ p {
 .apple-pill-btn {
   background: var(--rust);
   color: var(--foreground);
-  border: 1px solid rgba(224, 83, 38, 0.35);
+  border: 1px solid rgba(227, 219, 199, 0.25);
   border-radius: 9999px;
   font-weight: 600;
   transition: transform 140ms var(--ease-out-custom), background-color 160ms ease, box-shadow 160ms ease;
-  box-shadow: 0 4px 14px rgba(201, 65, 22, 0.25);
+  box-shadow: none;
 }
 
 .apple-pill-btn:hover {
   background: var(--rust-hover);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(201, 65, 22, 0.35);
+  box-shadow: none;
 }
 
 .apple-pill-btn:active {
   transform: scale(0.97);
-  box-shadow: 0 2px 8px rgba(201, 65, 22, 0.2);
+  box-shadow: none;
 }
 
 /* Input Fields: Inset Tactile Styling */
@@ -316,8 +342,8 @@ textarea:not([data-clean-input]):not(.clean-input)::placeholder {
 
 input:not([data-clean-input]):not(.clean-input):focus,
 textarea:not([data-clean-input]):not(.clean-input):focus {
-  border-color: var(--rust);
-  box-shadow: 0 0 0 3px rgba(201, 65, 22, 0.15);
+  border-color: #D33E0B;
+  box-shadow: 0 0 0 3px rgba(211, 62, 11, 0.2);
 }
 
 /* Scrollbar */
@@ -327,16 +353,16 @@ textarea:not([data-clean-input]):not(.clean-input):focus {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0A0A09;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2A2926;
+  background: rgba(227, 219, 199, 0.2);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3e3b35;
+  background: rgba(227, 219, 199, 0.4);
 }
 
 /* Reduced Motion */
@@ -357,7 +383,7 @@ textarea:not([data-clean-input]):not(.clean-input):focus {
 /* -------------------------------------------------------------------------- */
 :root {
   --drawer-inset: 0px;
-  --drawer-bleed-background: #151412;
+  --drawer-bleed-background: #000000;
   --drawer-overlay-min-opacity: 0.6;
 }
 

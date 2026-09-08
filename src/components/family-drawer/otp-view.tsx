@@ -74,7 +74,7 @@ export const OtpView = ({ phoneNumber, onBack, onSuccess }: OtpViewProps) => {
           <button
             type="button"
             onClick={onBack}
-            className="group -ml-1 inline-flex items-center gap-1.5 rounded-full px-2 py-1 text-[13px] font-medium text-[#A7A198] hover:text-[#F1EBDD] hover:bg-[#1A1917] transition-all cursor-pointer active:scale-95"
+            className="group -ml-1 inline-flex items-center gap-1.5 rounded-full px-2 py-1 text-[13px] font-medium text-[#E3DBC7]/70 hover:text-[#E3DBC7] hover:bg-[#000000] transition-all cursor-pointer active:scale-95"
             aria-label="Back to phone number"
           >
             <ArrowLeft className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-0.5" />
@@ -82,13 +82,13 @@ export const OtpView = ({ phoneNumber, onBack, onSuccess }: OtpViewProps) => {
           </button>
         </div>
 
-        <h2 className="mt-2 text-[22px] sm:text-[24px] font-semibold text-[#F1EBDD] tracking-tight font-sans">
+        <h2 className="mt-2 text-[22px] sm:text-[24px] font-semibold text-[#E3DBC7] tracking-tight font-sans">
           Verification Code
         </h2>
 
-        <p className="mt-1 text-[13px] leading-[18px] text-[#A7A198]">
+        <p className="mt-1 text-[13px] leading-[18px] text-[#E3DBC7]/70">
           Enter the code we sent to{' '}
-          <span className="font-semibold text-[#F1EBDD] font-mono">{phoneNumber}</span>
+          <span className="font-semibold text-[#E3DBC7] font-mono">{phoneNumber}</span>
         </p>
       </div>
 
@@ -108,33 +108,33 @@ export const OtpView = ({ phoneNumber, onBack, onSuccess }: OtpViewProps) => {
         {/* Status Feedback Message */}
         <div className="min-h-[22px] mt-2.5 flex items-center justify-center text-center">
           {status === 'error' && (
-            <p className="text-[12.5px] font-semibold text-red-400 tracking-tight animate-in fade-in slide-in-from-bottom-1 duration-150">
+            <p className="text-[12.5px] font-semibold text-[#FF0000] tracking-tight animate-in fade-in slide-in-from-bottom-1 duration-150">
               Invalid verification code. Please try again.
             </p>
           )}
 
           {status === 'success' && (
-            <p className="flex items-center gap-1.5 text-[12.5px] font-medium text-emerald-400 tracking-tight animate-in fade-in duration-150">
-              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" /> Code verified · Securing guest pass...
+            <p className="flex items-center gap-1.5 text-[12.5px] font-medium text-[#10B981] tracking-tight animate-in fade-in duration-150">
+              <CheckCircle2 className="h-3.5 w-3.5 text-[#10B981]" /> Code verified · Securing guest pass...
             </p>
           )}
         </div>
       </div>
 
       {/* Footer: Didn't get a code? & Contact Support */}
-      <div className="mt-auto flex flex-col items-center gap-2 border-t border-[#26231F] pt-3 text-center">
-        <div className="text-[13px] text-[#A7A198] font-medium flex items-center gap-1.5">
+      <div className="mt-auto flex flex-col items-center gap-2 border-t border-[#E3DBC7]/20 pt-3 text-center">
+        <div className="text-[13px] text-[#E3DBC7]/70 font-medium flex items-center gap-1.5">
           <span>Didn&apos;t get a code?</span>
           {timer > 0 ? (
-            <span className="text-[#A7A198]">
-              Resend in <span className="tabular-nums font-mono font-semibold text-[#F1EBDD]">{timer}s</span>
+            <span className="text-[#E3DBC7]/70">
+              Resend in <span className="tabular-nums font-mono font-semibold text-[#E3DBC7]">{timer}s</span>
             </span>
           ) : (
             <button
               type="button"
               onClick={handleResend}
               disabled={isResending}
-              className="inline-flex items-center gap-1 font-semibold text-[#C6532C] hover:underline cursor-pointer"
+              className="inline-flex items-center gap-1 font-semibold text-[#D33E0B] hover:underline cursor-pointer"
             >
               <RefreshCw className={`h-3 w-3 ${isResending ? 'animate-spin' : ''}`} />
               Resend
@@ -144,7 +144,7 @@ export const OtpView = ({ phoneNumber, onBack, onSuccess }: OtpViewProps) => {
 
         <a
           href="mailto:support@therumor.com?subject=AFTERTASTE%20Verification%20Code%20Support"
-          className="text-[12px] font-medium text-[#A7A198] hover:text-[#F0E9DC] underline transition-colors cursor-pointer"
+          className="text-[12px] font-medium text-[#E3DBC7]/70 hover:text-[#E3DBC7] underline transition-colors cursor-pointer"
         >
           Contact Support
         </a>
