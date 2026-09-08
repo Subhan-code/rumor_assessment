@@ -32,7 +32,6 @@ export const RumorAboutSection: React.FC = () => {
         <div className="p-4 rounded-xl bg-gradient-to-r from-[#D33E0B]/10 to-transparent border border-[#D33E0B]/30 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
           <div className="space-y-1">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#D33E0B] animate-pulse" />
               <span className="text-xs sm:text-sm font-mono uppercase tracking-wider text-[#D33E0B] font-bold">
                 Phone-Free Protocol
               </span>

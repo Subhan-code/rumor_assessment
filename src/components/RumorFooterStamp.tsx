@@ -15,7 +15,7 @@ export const RumorFooterStamp: React.FC = () => {
             Leave an Aftertaste.
           </h3>
           <p className="text-xs sm:text-sm text-[#E3DBC7]/70 font-normal leading-relaxed pt-1">
-            Opening night of Armory Week. A strictly phone-free sensory experience with select brands. Address revealed upon RSVP.
+            Armory Week 2026. A strictly phone-free sensory experience with select brands. Address revealed upon RSVP.
           </p>
         </div>
 

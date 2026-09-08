@@ -7,11 +7,8 @@ export const EditorialHeroSection: React.FC = () => {
     <div className="select-none space-y-4 sm:space-y-5">
       {/* Featured Eyebrow Pill (Luma Style) */}
       <div className="flex flex-wrap items-center gap-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E3DBC7]/[0.08] border border-[#E3DBC7]/20 text-xs sm:text-sm font-mono text-[#E3DBC7]">
-          <span className="w-2 h-2 rounded-full bg-[#D33E0B] shrink-0" />
-          <span className="font-semibold text-[#E3DBC7]">Opening Night of Armory Week</span>
-          <span className="text-[#E3DBC7]/50">·</span>
-          <span className="text-[#E3DBC7]/80">Thu, Sep 24</span>
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#E3DBC7]/[0.08] border border-[#E3DBC7]/20 text-xs sm:text-sm font-mono text-[#E3DBC7]">
+          <span className="font-semibold text-[#E3DBC7]">Armory Week 2026</span>
         </div>
 
         <div className="inline-flex items-center px-2.5 py-1 rounded-full bg-[#D33E0B]/15 border border-[#D33E0B]/30 text-xs sm:text-sm font-mono text-[#E3DBC7] font-semibold tracking-wide">

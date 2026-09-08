@@ -6,7 +6,7 @@ export const EVENT_DATA = {
   headline: 'THE COLLECTOR IS AWAY. / THE APARTMENT IS OPEN.',
   dateFull: 'Thursday, September 24',
   dateShort: 'Thu, Sep 24',
-  armoryNote: 'Opening Night of Armory Week',
+  armoryNote: 'Armory Week 2026',
   venueName: 'USM Studio Apartment',
   address: '53 Scott Ave, Brooklyn, NY 11237',
   city: 'New York',

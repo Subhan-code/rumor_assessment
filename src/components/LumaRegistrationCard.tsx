@@ -21,8 +21,7 @@ export const LumaRegistrationCard: React.FC<LumaRegistrationCardProps> = ({
         <span className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#E3DBC7]/70 font-semibold">
           Registration
         </span>
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-[#10B981]/15 border border-[#10B981]/30 text-[#10B981]">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
+        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-medium bg-[#10B981]/15 border border-[#10B981]/30 text-[#10B981]">
           {isAddressUnlocked ? 'Confirmed' : 'Guestlist Open'}
         </span>
       </div>

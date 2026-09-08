@@ -100,7 +100,7 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
       isoTime: '20:30',
       title: 'Seated VIP Dinner',
       desc: '30 curated dinner guests. Five-act sensory culinary experience designed by Happenings NY.',
-      meta: '30 Guests · Curated for Connection',
+      meta: '30 Guests (Curated for Connection)',
     },
     {
       time: '10:00 PM',
@@ -294,7 +294,7 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
                 Dylan Rose Rheingold
               </h2>
               <div className="text-xs sm:text-sm font-mono text-[#D33E0B] font-semibold uppercase tracking-wider mt-1">
-                New York City · Surrealism &amp; Abstract Figuration
+                New York City / Surrealism &amp; Abstract Figuration
               </div>
             </div>
 

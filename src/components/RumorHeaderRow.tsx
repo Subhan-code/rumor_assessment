@@ -59,7 +59,7 @@ export const RumorHeaderRow: React.FC<RumorHeaderRowProps> = ({
         <div className="flex-1 min-w-0">
           <div className="text-base font-semibold text-[#E3DBC7] flex items-center gap-1.5 truncate">
             <span className="truncate">
-              {isAddressUnlocked ? '53 Scott Ave, Brooklyn, NY' : 'Private Studio · New York'}
+              {isAddressUnlocked ? '53 Scott Ave, Brooklyn, NY' : 'Private Studio, New York'}
             </span>
             {isAddressUnlocked && (
               <a
@@ -75,7 +75,7 @@ export const RumorHeaderRow: React.FC<RumorHeaderRowProps> = ({
             )}
           </div>
           <div className="text-xs sm:text-sm text-[#E3DBC7]/75 truncate mt-0.5 font-mono">
-            {isAddressUnlocked ? 'USM Studio · Concierge Gate 02' : 'RSVP to See Address'}
+            {isAddressUnlocked ? 'USM Studio (Concierge Gate 02)' : 'RSVP to See Address'}
           </div>
         </div>
 

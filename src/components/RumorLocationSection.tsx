@@ -41,11 +41,11 @@ export const RumorLocationSection: React.FC<RumorLocationSectionProps> = ({
       <div className="pt-0.5">
         <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-3 sm:mb-4">
           <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-[#E3DBC7] font-normal tracking-tight">
-            {isAddressUnlocked ? '53 Scott Ave, Brooklyn, NY' : 'Private Studio · New York'}
+            {isAddressUnlocked ? '53 Scott Ave, Brooklyn, NY' : 'Private Studio, New York'}
           </h2>
           <span className="text-xs sm:text-sm font-mono text-[#E3DBC7]/75">
             {isAddressUnlocked
-              ? 'USM Studio · Concierge Gate 02'
+              ? 'USM Studio (Concierge Gate 02)'
               : 'RSVP to see event address'}
           </span>
         </div>
@@ -70,9 +70,7 @@ export const RumorLocationSection: React.FC<RumorLocationSectionProps> = ({
             {!isAddressUnlocked && (
               <div className="absolute inset-0 flex items-center justify-center p-4 bg-black/55 backdrop-blur-[1px]">
                 <div className="px-5 py-2.5 rounded-full bg-black/90 border border-[#E3DBC7]/30 text-xs sm:text-sm font-mono text-[#E3DBC7] shadow-xl flex items-center gap-2 group-hover:border-[#E3DBC7]/60 transition-colors">
-                  <span>RSVP to See Address</span>
-                  <span className="text-[#E3DBC7]/60">·</span>
-                  <span className="text-[#E3DBC7]/80">Revealed on RSVP</span>
+                  <span>RSVP to Reveal Address</span>
                   <span className="font-mono">→</span>
                 </div>
               </div>

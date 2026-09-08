@@ -22,7 +22,6 @@ export const StickyRsvpBar: React.FC<StickyRsvpBarProps> = ({ onOpenRsvp }) => {
             className="w-full h-12 px-5 rounded-full font-sans-ui text-xs tracking-wider uppercase font-bold text-white bg-neutral-900/90 hover:bg-neutral-800 border border-white/20 active:scale-[0.98] transition-all cursor-pointer shadow-[0_16px_40px_rgba(0,0,0,0.9)] backdrop-blur-xl flex items-center justify-between group"
           >
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D33E0B]" />
               <span>Request An Invitation</span>
             </div>
             <div className="flex items-center gap-2 text-neutral-400 group-hover:text-white font-mono text-[11px] transition-colors">

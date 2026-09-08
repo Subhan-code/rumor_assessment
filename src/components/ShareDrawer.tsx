@@ -37,7 +37,7 @@ export const ShareDrawer: React.FC<ShareDrawerProps> = ({
 
     const title = encodeURIComponent('AFTERTASTE × USM · Armory Week New York');
     const details = encodeURIComponent(
-      'Opening Night of Armory Week at 53 Scott Ave, Brooklyn. Five rooms of analog discovery, solid brass archival keys, and original commissions. Strict phone-free protocol.'
+      'Armory Week 2026 at 53 Scott Ave, Brooklyn. Five rooms of analog discovery, solid brass archival keys, and original commissions. Strict phone-free protocol.'
     );
     const location = encodeURIComponent('53 Scott Ave, Brooklyn, NY 11237');
     const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20260924T223000Z/20260925T050000Z&details=${details}&location=${location}`;
@@ -49,7 +49,7 @@ export const ShareDrawer: React.FC<ShareDrawerProps> = ({
       try {
         await navigator.share({
           title: eventTitle,
-          text: 'Join me at AFTERTASTE × USM — Opening Night of Armory Week NYC.',
+          text: 'Join me at AFTERTASTE × USM — Armory Week 2026 NYC.',
           url: eventUrl,
         });
       } catch {
