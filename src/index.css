@@ -38,25 +38,59 @@
   font-stretch: normal;
 }
 
+@font-face {
+  font-family: "OpenRunde";
+  src: url("/fonts/OpenRunde-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenRunde";
+  src: url("/fonts/OpenRunde-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenRunde";
+  src: url("/fonts/OpenRunde-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenRunde";
+  src: url("/fonts/OpenRunde-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --font-sans: 'Plus Jakarta Sans', 'degular', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'Instrument Serif', 'degular', Georgia, serif;
+  --font-sans: 'OpenRunde', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
   --font-mono: 'Space Mono', monospace;
-  --font-display: 'Instrument Serif', 'degular', Georgia, serif;
-  --font-romie: 'Instrument Serif', 'degular', Georgia, serif;
-  --font-apple: 'Plus Jakarta Sans', sans-serif;
-  --font-openRunde: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-romie: 'Instrument Serif', Georgia, serif;
+  --font-apple: 'OpenRunde', sans-serif;
+  --font-openRunde: 'OpenRunde', sans-serif;
+  --font-runde: 'OpenRunde', sans-serif;
 }
 
 :root {
   /* Exclusive Luxury Typography Tokens */
-  --font-display: 'Instrument Serif', 'degular', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', 'degular', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'OpenRunde', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'Space Mono', monospace;
   --font-serif: 'Instrument Serif', Georgia, serif;
   --font-romie: 'Instrument Serif', Georgia, serif;
-  --font-apple: 'Plus Jakarta Sans', sans-serif;
-  --font-openRunde: 'Plus Jakarta Sans', sans-serif;
+  --font-apple: 'OpenRunde', sans-serif;
+  --font-openRunde: 'OpenRunde', sans-serif;
+  --font-runde: 'OpenRunde', sans-serif;
 
   /* Pitch Dark High-Contrast Architectural Palette (Strict 5-Color System) */
   --background: #000000;
@@ -115,7 +149,7 @@
 
 body {
   position: relative;
-  font-family: 'degular', sans-serif !important;
+  font-family: 'OpenRunde', -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--background);
   color: var(--foreground);
   margin: 0;
@@ -127,29 +161,24 @@ body {
 }
 
 /* -------------------------------------------------------------------------- */
-/* UNIVERSAL DEGULAR APPLICATION (PROPER LOWERCASE & FLUSH MODERN SANS)       */
+/* LUXURY EDITORIAL & OPEN RUNDE TYPOGRAPHY (RARE-UI & BESPOKE CURATION)      */
 /* -------------------------------------------------------------------------- */
-*,
-*::before,
-*::after,
-html,
-body,
-button,
-input,
-textarea,
-select,
-h1, h2, h3, h4, h5, h6,
-p, span, a, label, div,
-.font-romie,
-.font-display,
-.font-sans,
-.font-serif,
-.font-mono,
-.font-apple,
 .font-openRunde,
 .font-open-runde,
-.font-sans-ui {
-  font-family: 'degular', sans-serif !important;
+.font-runde,
+.font-sans,
+.font-apple {
+  font-family: 'OpenRunde', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+.font-display,
+.font-romie,
+.font-serif {
+  font-family: 'Instrument Serif', Georgia, serif !important;
+}
+
+.font-mono {
+  font-family: 'Space Mono', monospace !important;
 }
 
 /* Headings and Optical Tracking */
