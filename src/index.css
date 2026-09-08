@@ -72,22 +72,22 @@
 
 @theme {
   --font-sans: 'OpenRunde', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-serif: 'OpenRunde', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'Space Mono', monospace;
-  --font-display: 'Instrument Serif', Georgia, serif;
-  --font-romie: 'Instrument Serif', Georgia, serif;
+  --font-display: 'OpenRunde', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-romie: 'OpenRunde', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-apple: 'OpenRunde', sans-serif;
   --font-openRunde: 'OpenRunde', sans-serif;
   --font-runde: 'OpenRunde', sans-serif;
 }
 
 :root {
-  /* Exclusive Luxury Typography Tokens */
-  --font-display: 'Instrument Serif', Georgia, serif;
+  /* Exclusive OpenRunde Universal Typography */
+  --font-display: 'OpenRunde', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-sans: 'OpenRunde', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'Space Mono', monospace;
-  --font-serif: 'Instrument Serif', Georgia, serif;
-  --font-romie: 'Instrument Serif', Georgia, serif;
+  --font-serif: 'OpenRunde', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-romie: 'OpenRunde', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-apple: 'OpenRunde', sans-serif;
   --font-openRunde: 'OpenRunde', sans-serif;
   --font-runde: 'OpenRunde', sans-serif;
@@ -149,7 +149,7 @@
 
 body {
   position: relative;
-  font-family: 'OpenRunde', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'OpenRunde', -apple-system, BlinkMacSystemFont, sans-serif !important;
   background-color: var(--background);
   color: var(--foreground);
   margin: 0;
@@ -161,24 +161,28 @@ body {
 }
 
 /* -------------------------------------------------------------------------- */
-/* LUXURY EDITORIAL & OPEN RUNDE TYPOGRAPHY (RARE-UI & BESPOKE CURATION)      */
+/* UNIVERSAL OPEN RUNDE APPLICATION (WHOLE WEBSITE)                           */
 /* -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after,
+html,
+body,
+button,
+input,
+textarea,
+select,
+h1, h2, h3, h4, h5, h6,
+p, span, a, label, div,
+.font-romie,
+.font-display,
+.font-sans,
+.font-serif,
+.font-apple,
 .font-openRunde,
 .font-open-runde,
-.font-runde,
-.font-sans,
-.font-apple {
+.font-runde {
   font-family: 'OpenRunde', -apple-system, BlinkMacSystemFont, sans-serif !important;
-}
-
-.font-display,
-.font-romie,
-.font-serif {
-  font-family: 'Instrument Serif', Georgia, serif !important;
-}
-
-.font-mono {
-  font-family: 'Space Mono', monospace !important;
 }
 
 /* Headings and Optical Tracking */
