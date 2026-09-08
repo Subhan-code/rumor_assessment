@@ -39,23 +39,24 @@
 }
 
 @theme {
-  --font-sans: 'degular', sans-serif;
-  --font-serif: 'degular', sans-serif;
-  --font-mono: 'degular', monospace;
-  --font-display: 'degular', sans-serif;
-  --font-romie: 'degular', sans-serif;
-  --font-apple: 'degular', sans-serif;
-  --font-openRunde: 'degular', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'degular', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Instrument Serif', 'degular', Georgia, serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-display: 'Instrument Serif', 'degular', Georgia, serif;
+  --font-romie: 'Instrument Serif', 'degular', Georgia, serif;
+  --font-apple: 'Plus Jakarta Sans', sans-serif;
+  --font-openRunde: 'Plus Jakarta Sans', sans-serif;
 }
 
 :root {
-  /* Exclusive Typography Token: degular */
-  --font-display: 'degular', sans-serif;
-  --font-sans: 'degular', sans-serif;
-  --font-mono: 'degular', monospace;
-  --font-romie: 'degular', sans-serif;
-  --font-apple: 'degular', sans-serif;
-  --font-openRunde: 'degular', sans-serif;
+  /* Exclusive Luxury Typography Tokens */
+  --font-display: 'Instrument Serif', 'degular', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', 'degular', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-romie: 'Instrument Serif', Georgia, serif;
+  --font-apple: 'Plus Jakarta Sans', sans-serif;
+  --font-openRunde: 'Plus Jakarta Sans', sans-serif;
 
   /* Pitch Dark High-Contrast Architectural Palette (Strict 5-Color System) */
   --background: #000000;

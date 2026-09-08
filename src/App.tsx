@@ -104,9 +104,8 @@ export default function App() {
               onOpenRsvp={handleOpenRsvp}
             />
 
-            {/* Mobile Only: Presented By & Hosted By (shown at bottom of stream on small screens) */}
+            {/* Mobile Only: Hosted By & Actions (shown at bottom of stream on small screens) */}
             <div className="md:hidden space-y-4 pt-2">
-              <PresentedByCard onOpenShare={() => setIsShareOpen(true)} />
               <HostedByCard />
               <HostActionLinks
                 onContactOrganizer={() => setIsContactOpen(true)}

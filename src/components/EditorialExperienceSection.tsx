@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { CabinetDiscoveryItem } from '../types';
 import {
   Table,
@@ -16,6 +16,7 @@ interface EditorialExperienceSectionProps {
 export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProps> = ({
   onSelectItem,
 }) => {
+  const [activeTab, setActiveTab] = useState<'rooms' | 'relics' | 'schedule'>('rooms');
   const rooms = [
     {
       num: '01',
@@ -122,21 +123,194 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
   return (
     <div className="space-y-4 sm:space-y-6 md:space-y-8 select-none">
       {/* =========================================================================
-          SECTION CARD 1: PHASE 2 — THE SEARCH (EXPLORE THE APARTMENT)
+          MOBILE VIEW: COMPACT, ELEGANT EDITORIAL EXPERIENCE FOLIO (NO AI SLOP)
           ========================================================================= */}
-      <section
-        id="phase-search"
-        className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-4 sm:p-7 md:p-8 space-y-4 sm:space-y-6"
-      >
-        {/* Card Header */}
-        <div className="pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
-          <span className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#E3DBC7]/70 font-semibold">
-            Phase 2 — The Search
-          </span>
-          <span className="text-xs font-mono text-[#E3DBC7]/50">
-            5 Studio Rooms
-          </span>
+      <div className="md:hidden space-y-4">
+        <div className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-4 select-none space-y-4">
+          {/* Folio Header */}
+          <div className="flex items-center justify-between pb-3 border-b border-[#E3DBC7]/15">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#E3DBC7]/70 font-semibold">
+              The Experience
+            </span>
+            <span className="text-[11px] font-mono text-[#E3DBC7]/50">
+              {activeTab === 'rooms' ? '5 Studio Rooms' : activeTab === 'relics' ? '5 Curated Relics' : 'Evening Acts'}
+            </span>
+          </div>
+
+          {/* Luxury Minimalist Segmented Tabs */}
+          <div className="grid grid-cols-3 gap-1 p-1 rounded-xl bg-black/60 border border-[#E3DBC7]/15 text-xs font-mono">
+            <button
+              type="button"
+              onClick={() => setActiveTab('rooms')}
+              className={`py-2 px-1 text-center rounded-lg transition-all cursor-pointer ${
+                activeTab === 'rooms'
+                  ? 'bg-[#E3DBC7]/20 text-[#E3DBC7] font-semibold border border-[#E3DBC7]/30'
+                  : 'text-[#E3DBC7]/60 hover:text-[#E3DBC7]'
+              }`}
+            >
+              5 Rooms
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveTab('relics')}
+              className={`py-2 px-1 text-center rounded-lg transition-all cursor-pointer ${
+                activeTab === 'relics'
+                  ? 'bg-[#E3DBC7]/20 text-[#E3DBC7] font-semibold border border-[#E3DBC7]/30'
+                  : 'text-[#E3DBC7]/60 hover:text-[#E3DBC7]'
+              }`}
+            >
+              5 Relics
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveTab('schedule')}
+              className={`py-2 px-1 text-center rounded-lg transition-all cursor-pointer ${
+                activeTab === 'schedule'
+                  ? 'bg-[#E3DBC7]/20 text-[#E3DBC7] font-semibold border border-[#E3DBC7]/30'
+                  : 'text-[#E3DBC7]/60 hover:text-[#E3DBC7]'
+              }`}
+            >
+              Schedule
+            </button>
+          </div>
+
+          {/* Tab Content: 5 Rooms */}
+          {activeTab === 'rooms' && (
+            <div className="space-y-2 pt-1">
+              <p className="text-xs text-[#E3DBC7]/70 font-normal">
+                Explore the space to find your assigned number among analog belongings:
+              </p>
+              <div className="space-y-2">
+                {rooms.map((room) => (
+                  <div
+                    key={room.name}
+                    className="p-3 rounded-xl bg-black/40 border border-[#E3DBC7]/10 flex items-start gap-3"
+                  >
+                    <span className="text-xs font-mono font-bold text-[#D33E0B] shrink-0 pt-0.5">
+                      {room.num}
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <div className="text-sm font-semibold text-[#E3DBC7]">{room.name}</div>
+                      <div className="text-xs text-[#E3DBC7]/70 leading-snug">{room.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Tab Content: 5 Relics */}
+          {activeTab === 'relics' && (
+            <div className="space-y-2 pt-1">
+              <p className="text-xs text-[#E3DBC7]/70 font-normal">
+                Unlock your USM Haller compartment to receive five foundational artifacts:
+              </p>
+              <div className="space-y-2">
+                {discoveryItems.map((item) => (
+                  <div
+                    key={item.num}
+                    onClick={() => onSelectItem?.(item)}
+                    className="p-3 rounded-xl bg-black/40 border border-[#E3DBC7]/10 flex items-start gap-3 cursor-pointer hover:border-[#E3DBC7]/30 transition-colors"
+                  >
+                    <span className="text-xs font-mono font-bold text-[#D33E0B] shrink-0 pt-0.5">
+                      {item.num}
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-sm font-semibold text-[#E3DBC7] truncate">{item.title}</span>
+                        <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#E3DBC7]/10 text-[#E3DBC7]/70 shrink-0">
+                          {item.subtitle}
+                        </span>
+                      </div>
+                      <div className="text-xs text-[#E3DBC7]/70 leading-snug pt-0.5">
+                        {item.shortDesc || item.desc}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Tab Content: Schedule */}
+          {activeTab === 'schedule' && (
+            <div className="space-y-2 pt-1">
+              <p className="text-xs text-[#E3DBC7]/70 font-normal">
+                A strictly phone-free sensory progression opening Armory Week:
+              </p>
+              <div className="space-y-2">
+                {runOfShow.map((slot) => (
+                  <div
+                    key={slot.isoTime}
+                    className="p-3 rounded-xl bg-black/40 border border-[#E3DBC7]/10 space-y-1"
+                  >
+                    <div className="flex items-baseline justify-between">
+                      <span className="font-mono text-sm font-bold text-[#D33E0B]">{slot.time}</span>
+                      <span className="text-[10px] font-mono text-[#E3DBC7]/50">{slot.isoTime} EDT</span>
+                    </div>
+                    <div className="text-sm font-semibold text-[#E3DBC7]">{slot.title}</div>
+                    <div className="text-xs text-[#E3DBC7]/70 leading-snug">
+                      {slot.shortDesc || slot.desc}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
+
+        {/* Compact Spotlight Artist Card for Mobile */}
+        <div className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-4 select-none space-y-3">
+          <div className="pb-2.5 border-b border-[#E3DBC7]/15 flex items-center justify-between">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#E3DBC7]/70 font-semibold">
+              Spotlight Artist
+            </span>
+            <span className="text-[11px] font-mono text-[#E3DBC7]/50">Armory Week</span>
+          </div>
+
+          <div className="flex items-center gap-3.5">
+            <div className="w-16 h-16 aspect-square rounded-xl overflow-hidden border border-[#E3DBC7]/20 shrink-0 bg-black">
+              <img
+                src="/dylan-rose-rheingold.png"
+                alt="Dylan Rose Rheingold"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="min-w-0 flex-1">
+              <h3 className="font-display text-lg font-normal text-[#E3DBC7] leading-tight">
+                Dylan Rose Rheingold
+              </h3>
+              <div className="text-[11px] font-mono text-[#D33E0B] font-semibold mt-0.5">
+                Surrealism / Abstract Figuration
+              </div>
+              <p className="text-xs text-[#E3DBC7]/75 leading-tight pt-1">
+                Monograph in USM cabinet · Works in Dining &amp; Listening Rooms
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* =========================================================================
+          DESKTOP VIEW: FULL EXPANDED EDITORIAL EXPERIENCE SECTIONS
+          ========================================================================= */}
+      <div className="hidden md:block space-y-6 md:space-y-8">
+        {/* =========================================================================
+            SECTION CARD 1: PHASE 2 — THE SEARCH (EXPLORE THE APARTMENT)
+            ========================================================================= */}
+        <section
+          id="phase-search"
+          className="rounded-2xl border border-[#E3DBC7]/15 bg-[#E3DBC7]/[0.025] p-4 sm:p-7 md:p-8 space-y-4 sm:space-y-6"
+        >
+          {/* Card Header */}
+          <div className="pb-3 border-b border-[#E3DBC7]/15 flex items-center justify-between">
+            <span className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#E3DBC7]/70 font-semibold">
+              Phase 2 — The Search
+            </span>
+            <span className="text-xs font-mono text-[#E3DBC7]/50">
+              5 Studio Rooms
+            </span>
+          </div>
 
         {/* Narrative & Statement from Deck */}
         <div className="space-y-2 sm:space-y-3">
@@ -415,6 +589,7 @@ export const EditorialExperienceSection: React.FC<EditorialExperienceSectionProp
           Invitations non-transferable · Seated dinner limited to 30 guests
         </div>
       </section>
+      </div>
     </div>
   );
 };
