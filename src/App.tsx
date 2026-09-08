@@ -13,7 +13,7 @@ import { ContactOrganizerModal } from './components/ContactOrganizerModal';
 import { EditorialHeroSection } from './components/EditorialHeroSection';
 import { EditorialExperienceSection } from './components/EditorialExperienceSection';
 import { RumorLocationSection } from './components/RumorLocationSection';
-import { PresentedByCard, HostedByCard, HostActionLinks, ShareEventCard } from './components/RumorHostsSection';
+import { PresentedByCard, HostedByCard, HostActionLinks } from './components/RumorHostsSection';
 import { initGlobalHaptics } from './lib/haptics';
 import { CabinetDiscoveryItem } from './types';
 
@@ -66,11 +66,10 @@ export default function App() {
             {/* 01 — Cover Artwork */}
             <FlyerCard onExpand={() => setIsFlyerModalOpen(true)} />
 
-            {/* Desktop Only Cards: Presented by, Hosted by, Share Event, Actions */}
+            {/* Desktop Only Cards: Presented by (with inline Share), Hosted by, Actions */}
             <div className="hidden md:flex flex-col space-y-3.5 pt-1">
-              <PresentedByCard />
+              <PresentedByCard onOpenShare={() => setIsShareOpen(true)} />
               <HostedByCard />
-              <ShareEventCard onOpenShare={() => setIsShareOpen(true)} />
               <HostActionLinks
                 onContactOrganizer={() => setIsContactOpen(true)}
               />
@@ -79,9 +78,9 @@ export default function App() {
 
           {/* ================= RIGHT COLUMN (Main Content Stream) ================= */}
           <div className="flex-1 min-w-0 space-y-7 sm:space-y-9 md:space-y-11">
-            {/* 01 — Event Top Meta (Primary Tier) */}
+            {/* 01 — Event Top Meta (Primary Tier: Cover, Headline, Date, Location & Inline Share) */}
             <div className="space-y-4 sm:space-y-5">
-              <EditorialHeroSection />
+              <EditorialHeroSection onOpenShare={() => setIsShareOpen(true)} />
 
               {/* Date & Location Rows (Side by Side on Desktop) */}
               <RumorHeaderRow
@@ -108,9 +107,8 @@ export default function App() {
               />
             </div>
 
-            {/* Mobile Only: Share Event Card, Hosted By & Actions (Community Tier) */}
+            {/* Mobile Only: Hosted By & Actions */}
             <div className="md:hidden space-y-4 pt-2 sm:pt-4">
-              <ShareEventCard onOpenShare={() => setIsShareOpen(true)} />
               <HostedByCard />
               <HostActionLinks
                 onContactOrganizer={() => setIsContactOpen(true)}
