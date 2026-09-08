@@ -21,8 +21,8 @@ export const EditorialHeroSection: React.FC<EditorialHeroSectionProps> = ({
         </div>
       </div>
 
-      {/* Main Event Headline - Refined Size & Bold */}
-      <h1 className="font-display text-[26px] sm:text-[30px] lg:text-[34px] font-bold text-[#E3DBC7] tracking-tight leading-[1.15]">
+      {/* Main Event Headline - Bold, Impactful & Prominent */}
+      <h1 className="font-display text-[32px] sm:text-[40px] md:text-[44px] lg:text-[48px] font-bold text-[#E3DBC7] tracking-tight leading-[1.08] sm:leading-[1.12] my-3 sm:my-4 md:my-5">
         The collector is away. <br />
         <span className="text-[#E3DBC7]/90">The apartment is open.</span>
       </h1>
