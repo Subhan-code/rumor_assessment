@@ -26,12 +26,22 @@ export const EditorialHeroSection: React.FC = () => {
         On Thursday, September 24th, Aftertaste & USM host a strictly phone-free sensory experience with select brands. For the first time, USM invites New York’s creative class to converge in its private studio to consider the future of collecting. Devices are safely checked at arrival for unbroken presence.
       </p>
 
-      {/* Mobile-Only Host Line */}
-      <div className="flex items-center gap-2 pt-1 pb-1 md:hidden">
-        <span className="text-xs text-[#E3DBC7]/60">Presented by</span>
-        <span className="text-xs font-semibold text-[#E3DBC7]">
-          Aftertaste & USM Haller
-        </span>
+      {/* Luma Mobile-Only Host Row under Title */}
+      <div className="flex items-center gap-2 pt-0.5 pb-0.5 md:hidden">
+        <div className="w-5 h-5 rounded-md overflow-hidden border border-[#E3DBC7]/20 shrink-0 bg-black">
+          <img
+            src="/hero-pic.jpg"
+            alt="Aftertaste × USM"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="flex items-center gap-1.5 min-w-0 text-xs">
+          <span className="text-[#E3DBC7]/60">Presented by</span>
+          <span className="font-semibold text-[#E3DBC7] truncate">
+            Aftertaste & USM Haller
+          </span>
+          <span className="text-[#E3DBC7]/50 font-mono">›</span>
+        </div>
       </div>
     </div>
   );
